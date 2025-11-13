@@ -54,10 +54,11 @@ namespace FishMart
 
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
             V_FormRegister registerForm = new V_FormRegister();
+            registerForm.FormClosed += (s, args) => this.Show();
             registerForm.Show();
         }
     }

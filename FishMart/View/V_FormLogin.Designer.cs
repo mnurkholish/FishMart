@@ -33,7 +33,7 @@
             panel1 = new Panel();
             btnLogin = new Button();
             tbPasswordLogin = new TextBox();
-            linkLabel1 = new LinkLabel();
+            btnSignUp = new LinkLabel();
             tbEmailLogin = new TextBox();
             pictureBox2 = new PictureBox();
             npgsqlCommandBuilder1 = new Npgsql.NpgsqlCommandBuilder();
@@ -56,7 +56,7 @@
             // 
             panel1.Controls.Add(btnLogin);
             panel1.Controls.Add(tbPasswordLogin);
-            panel1.Controls.Add(linkLabel1);
+            panel1.Controls.Add(btnSignUp);
             panel1.Controls.Add(tbEmailLogin);
             panel1.Controls.Add(pictureBox2);
             panel1.Dock = DockStyle.Right;
@@ -84,19 +84,19 @@
             tbPasswordLogin.Size = new Size(441, 33);
             tbPasswordLogin.TabIndex = 5;
             // 
-            // linkLabel1
+            // btnSignUp
             // 
-            linkLabel1.ActiveLinkColor = Color.Red;
-            linkLabel1.AutoSize = true;
-            linkLabel1.BackColor = Color.White;
-            linkLabel1.Font = new Font("Poppins", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            linkLabel1.Location = new Point(307, 608);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(105, 40);
-            linkLabel1.TabIndex = 4;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Sign Up";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            btnSignUp.ActiveLinkColor = Color.Red;
+            btnSignUp.AutoSize = true;
+            btnSignUp.BackColor = Color.White;
+            btnSignUp.Font = new Font("Poppins", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSignUp.Location = new Point(307, 608);
+            btnSignUp.Name = "btnSignUp";
+            btnSignUp.Size = new Size(105, 40);
+            btnSignUp.TabIndex = 4;
+            btnSignUp.TabStop = true;
+            btnSignUp.Text = "Sign Up";
+            btnSignUp.LinkClicked += btnSignUp_LinkClicked;
             // 
             // tbEmailLogin
             // 
@@ -124,14 +124,14 @@
             npgsqlCommandBuilder1.QuotePrefix = "\"";
             npgsqlCommandBuilder1.QuoteSuffix = "\"";
             // 
-            // FormLogin
+            // V_FormLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1280, 719);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
-            Name = "FormLogin";
+            Name = "V_FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormLogin";
             Load += FormLogin_Load;
@@ -148,7 +148,7 @@
         private Panel panel1;
         private Npgsql.NpgsqlCommandBuilder npgsqlCommandBuilder1;
         private PictureBox pictureBox2;
-        private LinkLabel linkLabel1;
+        private LinkLabel btnSignUp;
         private TextBox tbEmailLogin;
         private TextBox tbPasswordLogin;
         private Button btnLogin;

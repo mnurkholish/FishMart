@@ -45,11 +45,9 @@ namespace FishMart
             btnRegis.BackgroundImage = Properties.Resources.sing_up;
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnSignIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            V_FormLogin loginForm = new V_FormLogin();
-            loginForm.Show();
+            this.Close();
         }
     }
 }

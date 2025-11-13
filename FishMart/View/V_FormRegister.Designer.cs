@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_FormRegister));
             panel1 = new Panel();
-            linkLabel1 = new LinkLabel();
+            btnSignIn = new LinkLabel();
             btnRegis = new Button();
             tbPasswordRegis = new TextBox();
             tbNomorTlpRegis = new TextBox();
@@ -45,7 +45,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(linkLabel1);
+            panel1.Controls.Add(btnSignIn);
             panel1.Controls.Add(btnRegis);
             panel1.Controls.Add(tbPasswordRegis);
             panel1.Controls.Add(tbNomorTlpRegis);
@@ -58,18 +58,18 @@
             panel1.Size = new Size(716, 719);
             panel1.TabIndex = 0;
             // 
-            // linkLabel1
+            // btnSignIn
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.BackColor = Color.White;
-            linkLabel1.Font = new Font("Poppins", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            linkLabel1.Location = new Point(262, 626);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(195, 31);
-            linkLabel1.TabIndex = 8;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Sudah punya akun?";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            btnSignIn.AutoSize = true;
+            btnSignIn.BackColor = Color.White;
+            btnSignIn.Font = new Font("Poppins", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSignIn.Location = new Point(262, 626);
+            btnSignIn.Name = "btnSignIn";
+            btnSignIn.Size = new Size(195, 31);
+            btnSignIn.TabIndex = 8;
+            btnSignIn.TabStop = true;
+            btnSignIn.Text = "Sudah punya akun?";
+            btnSignIn.LinkClicked += btnSignIn_LinkClicked;
             // 
             // btnRegis
             // 
@@ -169,7 +169,7 @@
         private TextBox tbEmailRegis;
         private TextBox tbNomorTlpRegis;
         private TextBox tbUsernameRegis;
-        private LinkLabel linkLabel1;
+        private LinkLabel btnSignIn;
         private Button btnRegis;
         private TextBox tbPasswordRegis;
     }
