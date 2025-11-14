@@ -63,29 +63,9 @@ namespace FishMart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Log_in_bg {
+        internal static System.Drawing.Bitmap login_bg {
             get {
-                object obj = ResourceManager.GetObject("Log in bg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap panel_form_login {
-            get {
-                object obj = ResourceManager.GetObject("panel form login", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap panel_form_regis {
-            get {
-                object obj = ResourceManager.GetObject("panel form regis", resourceCulture);
+                object obj = ResourceManager.GetObject("login_bg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,26 +86,6 @@ namespace FishMart.Properties {
         internal static System.Drawing.Bitmap sing_in_hover {
             get {
                 object obj = ResourceManager.GetObject("sing_in_hover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap sing_up {
-            get {
-                object obj = ResourceManager.GetObject("sing_up", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap sing_up_hover {
-            get {
-                object obj = ResourceManager.GetObject("sing_up_hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

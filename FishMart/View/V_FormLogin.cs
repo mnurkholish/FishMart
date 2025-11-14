@@ -36,6 +36,8 @@ namespace FishMart
             tbPasswordLogin.UseSystemPasswordChar = true;
 
 
+
+
         }
 
         private void btnLogin_MouseEnter(object sender, EventArgs e)
@@ -54,12 +56,7 @@ namespace FishMart
 
         }
 
-        private void btnSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            V_FormRegister registerForm = new V_FormRegister();
-            registerForm.FormClosed += (s, args) => this.Show();
-            registerForm.Show();
-        }
+
+
     }
 }

@@ -29,125 +29,80 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            panel1 = new Panel();
-            btnLogin = new Button();
-            tbPasswordLogin = new TextBox();
-            btnSignUp = new LinkLabel();
-            tbEmailLogin = new TextBox();
-            pictureBox2 = new PictureBox();
             npgsqlCommandBuilder1 = new Npgsql.NpgsqlCommandBuilder();
+            tbEmailLogin = new TextBox();
+            tbPasswordLogin = new TextBox();
+            btnLogin = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Log_in_bg;
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.login_bg;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1280, 720);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Size = new Size(1280, 719);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(btnLogin);
-            panel1.Controls.Add(tbPasswordLogin);
-            panel1.Controls.Add(btnSignUp);
-            panel1.Controls.Add(tbEmailLogin);
-            panel1.Controls.Add(pictureBox2);
-            panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(564, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(716, 719);
-            panel1.TabIndex = 1;
-            // 
-            // btnLogin
-            // 
-            btnLogin.Location = new Point(225, 548);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(268, 48);
-            btnLogin.TabIndex = 6;
-            btnLogin.UseVisualStyleBackColor = true;
-            btnLogin.Click += btnLogin_Click;
-            // 
-            // tbPasswordLogin
-            // 
-            tbPasswordLogin.BackColor = Color.White;
-            tbPasswordLogin.BorderStyle = BorderStyle.None;
-            tbPasswordLogin.Font = new Font("Poppins", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbPasswordLogin.Location = new Point(136, 458);
-            tbPasswordLogin.Name = "tbPasswordLogin";
-            tbPasswordLogin.Size = new Size(441, 33);
-            tbPasswordLogin.TabIndex = 5;
-            // 
-            // btnSignUp
-            // 
-            btnSignUp.ActiveLinkColor = Color.Red;
-            btnSignUp.AutoSize = true;
-            btnSignUp.BackColor = Color.White;
-            btnSignUp.Font = new Font("Poppins", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSignUp.Location = new Point(307, 608);
-            btnSignUp.Name = "btnSignUp";
-            btnSignUp.Size = new Size(105, 40);
-            btnSignUp.TabIndex = 4;
-            btnSignUp.TabStop = true;
-            btnSignUp.Text = "Sign Up";
-            btnSignUp.LinkClicked += btnSignUp_LinkClicked;
-            // 
-            // tbEmailLogin
-            // 
-            tbEmailLogin.BorderStyle = BorderStyle.None;
-            tbEmailLogin.Font = new Font("Poppins", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbEmailLogin.Location = new Point(136, 339);
-            tbEmailLogin.Name = "tbEmailLogin";
-            tbEmailLogin.Size = new Size(441, 33);
-            tbEmailLogin.TabIndex = 2;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.White;
-            pictureBox2.Dock = DockStyle.Fill;
-            pictureBox2.Image = Properties.Resources.panel_form_login;
-            pictureBox2.Location = new Point(0, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(716, 719);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
             // 
             // npgsqlCommandBuilder1
             // 
             npgsqlCommandBuilder1.QuotePrefix = "\"";
             npgsqlCommandBuilder1.QuoteSuffix = "\"";
             // 
+            // tbEmailLogin
+            // 
+            tbEmailLogin.BorderStyle = BorderStyle.None;
+            tbEmailLogin.Font = new Font("Poppins", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbEmailLogin.Location = new Point(784, 316);
+            tbEmailLogin.Name = "tbEmailLogin";
+            tbEmailLogin.Size = new Size(378, 27);
+            tbEmailLogin.TabIndex = 2;
+            // 
+            // tbPasswordLogin
+            // 
+            tbPasswordLogin.BackColor = Color.White;
+            tbPasswordLogin.BorderStyle = BorderStyle.None;
+            tbPasswordLogin.Font = new Font("Poppins", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbPasswordLogin.Location = new Point(784, 424);
+            tbPasswordLogin.Name = "tbPasswordLogin";
+            tbPasswordLogin.Size = new Size(378, 27);
+            tbPasswordLogin.TabIndex = 5;
+            // 
+            // btnLogin
+            // 
+            btnLogin.BackColor = Color.White;
+            btnLogin.Location = new Point(777, 512);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(393, 54);
+            btnLogin.TabIndex = 6;
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
+            // 
             // V_FormLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1280, 719);
-            Controls.Add(panel1);
+            Controls.Add(tbEmailLogin);
+            Controls.Add(btnLogin);
+            Controls.Add(tbPasswordLogin);
             Controls.Add(pictureBox1);
             Name = "V_FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormLogin";
             Load += FormLogin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private PictureBox pictureBox1;
-        private Panel panel1;
         private Npgsql.NpgsqlCommandBuilder npgsqlCommandBuilder1;
-        private PictureBox pictureBox2;
-        private LinkLabel btnSignUp;
         private TextBox tbEmailLogin;
         private TextBox tbPasswordLogin;
         private Button btnLogin;
