@@ -22,8 +22,6 @@ namespace FishMart.DataBase
 
         public dbContext()
         {
-            Env.Load();
-
             _dbHost = Environment.GetEnvironmentVariable("DB_HOST");
             _dbPort = Environment.GetEnvironmentVariable("DB_PORT");
             _dbUser = Environment.GetEnvironmentVariable("DB_USER");

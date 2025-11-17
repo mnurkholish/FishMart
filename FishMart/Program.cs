@@ -1,3 +1,5 @@
+using DotNetEnv;
+
 namespace FishMart
 {
     internal static class Program
@@ -8,6 +10,7 @@ namespace FishMart
         [STAThread]
         static void Main()
         {
+            Env.Load();
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
