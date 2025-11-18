@@ -34,10 +34,6 @@ namespace FishMart
             btnLogin.BackColor = Color.Transparent;
 
             tbPasswordLogin.UseSystemPasswordChar = true;
-
-
-
-
         }
 
         private void btnLogin_MouseEnter(object sender, EventArgs e)
@@ -53,7 +49,7 @@ namespace FishMart
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            _authController.Login();
         }
 
 
