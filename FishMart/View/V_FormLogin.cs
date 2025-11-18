@@ -14,11 +14,11 @@ namespace FishMart
 {
     public partial class V_FormLogin : Form
     {
-        private AuthController _authController;
-        public V_FormLogin()
+        private readonly AuthController _authController;
+        public V_FormLogin(AuthController authController)
         {
             InitializeComponent();
-            _authController = new AuthController();
+            _authController = authController;
             btnLogin.MouseEnter += btnLogin_MouseEnter;
             btnLogin.MouseLeave += btnLogin_MouseLeave;
         }
@@ -49,7 +49,8 @@ namespace FishMart
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            _authController.Login();
+            bool success = _authController.Login(tbEmailLogin.Text, tbPasswordLogin.Text);
+            MessageBox.Show(success ? "Login Berhasil" : "Login Gagal");
         }
 
 
