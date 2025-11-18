@@ -1,3 +1,8 @@
+using DotNetEnv;
+using FishMart.Controler;
+using FishMart.Repositories;
+using FishMart.Services;
+
 namespace FishMart
 {
     internal static class Program
@@ -8,10 +13,14 @@ namespace FishMart
         [STAThread]
         static void Main()
         {
+            Env.Load();
+            UserRepository userRepository = new UserRepository();
+            UserService userService = new UserService(userRepository);
+            AuthController authController = new AuthController(userService);
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run();
+            Application.Run(new V_FormLogin(authController));
         }
     }
 }

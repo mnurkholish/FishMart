@@ -1,0 +1,59 @@
+﻿using FishMart.Controler;
+using FishMart.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FishMart
+{
+    public partial class V_FormLogin : Form
+    {
+        private readonly AuthController _authController;
+        public V_FormLogin(AuthController authController)
+        {
+            InitializeComponent();
+            _authController = authController;
+            btnLogin.MouseEnter += btnLogin_MouseEnter;
+            btnLogin.MouseLeave += btnLogin_MouseLeave;
+        }
+
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            // Set tampilan awal tombol login
+            btnLogin.BackgroundImage = Properties.Resources.sing_in;
+            btnLogin.BackgroundImageLayout = ImageLayout.Stretch;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.BackColor = Color.Transparent;
+
+            tbPasswordLogin.UseSystemPasswordChar = true;
+        }
+
+        private void btnLogin_MouseEnter(object sender, EventArgs e)
+        {
+            btnLogin.BackgroundImage = Properties.Resources.sing_in_hover;
+        }
+
+        // Saat mouse keluar
+        private void btnLogin_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogin.BackgroundImage = Properties.Resources.sing_in;
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            bool success = _authController.Login(tbEmailLogin.Text, tbPasswordLogin.Text);
+            MessageBox.Show(success ? "Login Berhasil" : "Login Gagal");
+        }
+
+
+
+    }
+}
