@@ -38,13 +38,13 @@ namespace FishMart.Repositories
             conn.Open();
 
             using var cmd = new NpgsqlCommand(
-                @"INSERT INTO users(email, username, no_telp, password_hash)
-          VALUES(@e, @u, @n, @p, @a)", conn);
+                @"INSERT INTO users(email, password_hash, username, no_telp)
+                VALUES(@e, @p, @u, @n)", conn);
 
             cmd.Parameters.AddWithValue("@e", user.Email);
+            cmd.Parameters.AddWithValue("@p", user.PasswordHash);
             cmd.Parameters.AddWithValue("@u", user.Username);
             cmd.Parameters.AddWithValue("@n", user.NoTelp);
-            cmd.Parameters.AddWithValue("@p", user.PasswordHash);
 
             cmd.ExecuteNonQuery();
         }

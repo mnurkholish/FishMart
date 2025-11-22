@@ -52,8 +52,5 @@ namespace FishMart
             bool success = _authController.Login(tbEmailLogin.Text, tbPasswordLogin.Text);
             MessageBox.Show(success ? "Login Berhasil" : "Login Gagal");
         }
-
-
-
     }
 }
