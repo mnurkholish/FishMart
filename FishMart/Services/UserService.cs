@@ -16,7 +16,7 @@ namespace FishMart.Services
 
         public bool Create(string email, string password, string username, string noTelp)
         {
-            if (_repo.GetByEmail(email) != null)
+            if (_repo.GetUserByEmail(email) != null)
                 return false;
 
             string hash = BCrypt.Net.BCrypt.HashPassword(password);
@@ -34,7 +34,7 @@ namespace FishMart.Services
 
         public User? Login(string email, string password)
         {
-            var user = _repo.GetByEmail(email);
+            var user = _repo.GetUserByEmail(email);
             if (user == null) return null;
 
             return BCrypt.Net.BCrypt.Verify(password, user.PasswordHash) ? user : null;

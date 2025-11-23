@@ -7,7 +7,7 @@ namespace FishMart.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        public User? GetByEmail(string email)
+        public User? GetUserByEmail(string email)
         {
             using var conn = Database.GetConnection();
             conn.Open();
