@@ -8,6 +8,5 @@ namespace FishMart.Repositories
 {
     public class ProdukRepository : IProdukRepository
     {
-
     }
 }
