@@ -14,17 +14,19 @@ namespace FishMart.Services
             _repo = repo;
         }
 
-        public bool Register(string username, string password)
+        public bool Create(string email, string password, string username, string noTelp)
         {
-            if (_repo.GetByEmail(username) != null)
+            if (_repo.GetUserByEmail(email) != null)
                 return false;
 
             string hash = BCrypt.Net.BCrypt.HashPassword(password);
 
             _repo.Create(new User
             {
+                Email = email,
+                PasswordHash = hash,
                 Username = username,
-                PasswordHash = hash
+                NoTelp = noTelp
             });
 
             return true;
@@ -32,7 +34,7 @@ namespace FishMart.Services
 
         public User? Login(string email, string password)
         {
-            var user = _repo.GetByEmail(email);
+            var user = _repo.GetUserByEmail(email);
             if (user == null) return null;
 
             return BCrypt.Net.BCrypt.Verify(password, user.PasswordHash) ? user : null;

@@ -6,7 +6,7 @@ namespace FishMart.Repositories
 {
     public interface IUserRepository
     {
-        User GetByEmail(string username);
+        User GetUserByEmail(string email);
         void Create(User user);
     }
 }
