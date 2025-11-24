@@ -2,6 +2,7 @@ using DotNetEnv;
 using FishMart.Controler;
 using FishMart.Repositories;
 using FishMart.Services;
+using FishMart.View;
 
 namespace FishMart
 {
@@ -20,7 +21,7 @@ namespace FishMart
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new V_FormLogin(authController));
+            Application.Run(new V_DashboardAdmin(authController));
         }
     }
 }

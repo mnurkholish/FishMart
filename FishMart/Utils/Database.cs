@@ -1,6 +1,7 @@
 ﻿using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,24 @@ namespace FishMart.Utils
                 $"SSL Mode={sslMode};Channel Binding={channelBinding};";
 
             return new NpgsqlConnection(connString);
+        }
+
+        public static DataTable GetProducts()
+        {
+            using (var conn = GetConnection())
+            {
+                conn.Open();
+
+                string query = "SELECT id, nama_produk, harga, stok, gambar_produk FROM produk";
+
+                using (var cmd = new NpgsqlCommand(query, conn))
+                using (var da = new NpgsqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
         }
     }
 }
