@@ -1,4 +1,4 @@
-﻿using FishMart.Controler;
+﻿using FishMart.Controller;
 using FishMart.Models;
 using System;
 using System.Collections.Generic;

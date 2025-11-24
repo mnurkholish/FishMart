@@ -1,5 +1,5 @@
 using DotNetEnv;
-using FishMart.Controler;
+using FishMart.Controller;
 using FishMart.Repositories;
 using FishMart.Services;
 

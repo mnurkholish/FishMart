@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using FishMart.Utils;
 using FishMart.Services;
 
-namespace FishMart.Controler
+namespace FishMart.Controller
 {
     public class AuthController
     {
