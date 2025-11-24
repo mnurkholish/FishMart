@@ -11,9 +11,9 @@ namespace FishMart.Controler
     {
         private readonly UserService _userService;
 
-        public UserController(UserService userService)
+        public UserController()
         {
-            _userService = userService;
+            _userService = new UserService();
         }
         public bool createUser(string email, string password, string username, string noTelp)
         {

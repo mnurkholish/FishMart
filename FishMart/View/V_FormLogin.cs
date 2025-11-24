@@ -15,10 +15,10 @@ namespace FishMart
     public partial class V_FormLogin : Form
     {
         private readonly AuthController _authController;
-        public V_FormLogin(AuthController authController)
+        public V_FormLogin()
         {
             InitializeComponent();
-            _authController = authController;
+            _authController = new AuthController();
             btnLogin.MouseEnter += btnLogin_MouseEnter;
             btnLogin.MouseLeave += btnLogin_MouseLeave;
         }

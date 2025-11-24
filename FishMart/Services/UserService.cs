@@ -7,11 +7,11 @@ namespace FishMart.Services
 {
     public class UserService : IUserService
     {
-        private readonly IUserRepository _repo;
+        private readonly UserRepository _repo;
 
-        public UserService(IUserRepository repo)
+        public UserService()
         {
-            _repo = repo;
+            _repo = new UserRepository();
         }
 
         public bool Create(string email, string password, string username, string noTelp)
