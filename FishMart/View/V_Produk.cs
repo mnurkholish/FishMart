@@ -1,4 +1,4 @@
-﻿using FishMart.Controler;
+﻿using FishMart.Controller;
 using FishMart.Utils;
 using System;
 using System.Collections.Generic;
@@ -15,10 +15,10 @@ namespace FishMart.View
     public partial class V_Produk : Form
     {
         private readonly AuthController _authController;
-        public V_Produk(AuthController authController)
+        public V_Produk()
         {
             InitializeComponent();
-            _authController = authController;
+            _authController = new AuthController();
         }
 
         private void GenerateProductCards(DataTable dt)

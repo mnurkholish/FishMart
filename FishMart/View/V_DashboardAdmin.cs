@@ -1,4 +1,4 @@
-﻿using FishMart.Controler;
+﻿using FishMart.Controller;
 using FishMart.Utils;
 using System;
 using System.Collections.Generic;
@@ -17,10 +17,10 @@ namespace FishMart.View
     {
         private readonly AuthController _authController;
 
-        public V_DashboardAdmin(AuthController authController)
+        public V_DashboardAdmin()
         {
             InitializeComponent();
-            _authController = authController;
+            _authController = new AuthController();
 
         }
 

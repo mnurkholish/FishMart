@@ -1,4 +1,4 @@
-﻿using FishMart.Controler;
+﻿using FishMart.Controller;
 using FishMart.Models;
 using System;
 using System.Collections.Generic;
@@ -15,10 +15,10 @@ namespace FishMart
     public partial class V_FormLogin : Form
     {
         private readonly AuthController _authController;
-        public V_FormLogin(AuthController authController)
+        public V_FormLogin()
         {
             InitializeComponent();
-            _authController = authController;
+            _authController = new AuthController();
             btnLogin.MouseEnter += btnLogin_MouseEnter;
             btnLogin.MouseLeave += btnLogin_MouseLeave;
         }
@@ -49,11 +49,18 @@ namespace FishMart
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            bool success = _authController.Login(tbEmailLogin.Text, tbPasswordLogin.Text);
-            MessageBox.Show(success ? "Login Berhasil" : "Login Gagal");
+            bool success = _authController.Login(tbEmailLogin.Text, tbPasswordLogin.Text, this);
+            if (!success)
+            {
+                MessageBox.Show("Username atau Password salah. Silahkan Coba Lagi!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-
-
+        private void btnShowPassword_Click(object sender, EventArgs e)
+        {
+            tbPasswordLogin.UseSystemPasswordChar = !tbPasswordLogin.UseSystemPasswordChar;
+            btnShowPassword.BackgroundImage = tbPasswordLogin.UseSystemPasswordChar ? Properties.Resources.EyesClose : Properties.Resources.EyesOpen;
+            btnShowPassword.BackgroundImageLayout = ImageLayout.Zoom;
+        }
     }
 }

@@ -2,29 +2,32 @@
 using FishMart.Repositories;
 using FishMart.Models;
 using BCrypt.Net;
+using FishMart.Session;
 
 namespace FishMart.Services
 {
     public class UserService : IUserService
     {
-        private readonly IUserRepository _repo;
+        private readonly UserRepository _repo;
 
-        public UserService(IUserRepository repo)
+        public UserService()
         {
-            _repo = repo;
+            _repo = new UserRepository();
         }
 
-        public bool Register(string username, string password)
+        public bool Create(string email, string password, string username, string noTelp)
         {
-            if (_repo.GetByEmail(username) != null)
+            if (_repo.GetUserByEmail(email) != null)
                 return false;
 
             string hash = BCrypt.Net.BCrypt.HashPassword(password);
 
             _repo.Create(new User
             {
+                Email = email,
+                PasswordHash = hash,
                 Username = username,
-                PasswordHash = hash
+                NoTelp = noTelp
             });
 
             return true;
@@ -32,10 +35,17 @@ namespace FishMart.Services
 
         public User? Login(string email, string password)
         {
-            var user = _repo.GetByEmail(email);
+            var user = _repo.GetUserByEmail(email);
             if (user == null) return null;
 
-            return BCrypt.Net.BCrypt.Verify(password, user.PasswordHash) ? user : null;
+            bool valid = BCrypt.Net.BCrypt.Verify(password, user.PasswordHash);
+            if (!valid) return null;
+
+            UserSession.Id = user.Id;
+            UserSession.Username = user.Username;
+            UserSession.IsAdmin = user.IsAdmin;
+
+            return user;
         }
     }
 }
