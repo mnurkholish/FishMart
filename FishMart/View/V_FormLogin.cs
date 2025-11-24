@@ -53,7 +53,11 @@ namespace FishMart
             MessageBox.Show(success ? "Login Berhasil" : "Login Gagal");
         }
 
-
-
+        private void btnShowPassword_Click(object sender, EventArgs e)
+        {
+            tbPasswordLogin.UseSystemPasswordChar = !tbPasswordLogin.UseSystemPasswordChar;
+            btnShowPassword.BackgroundImage = tbPasswordLogin.UseSystemPasswordChar ? Properties.Resources.EyesClose : Properties.Resources.EyesOpen;
+            btnShowPassword.BackgroundImageLayout = ImageLayout.Zoom;
+        }
     }
 }

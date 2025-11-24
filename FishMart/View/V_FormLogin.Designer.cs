@@ -33,6 +33,7 @@
             tbEmailLogin = new TextBox();
             tbPasswordLogin = new TextBox();
             btnLogin = new Button();
+            btnShowPassword = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -81,11 +82,25 @@
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
+            // btnShowPassword
+            // 
+            btnShowPassword.BackgroundImage = Properties.Resources.EyesClose;
+            btnShowPassword.BackgroundImageLayout = ImageLayout.Stretch;
+            btnShowPassword.FlatAppearance.BorderSize = 0;
+            btnShowPassword.FlatStyle = FlatStyle.Flat;
+            btnShowPassword.Location = new Point(1132, 424);
+            btnShowPassword.Name = "btnShowPassword";
+            btnShowPassword.Size = new Size(30, 30);
+            btnShowPassword.TabIndex = 7;
+            btnShowPassword.UseVisualStyleBackColor = true;
+            btnShowPassword.Click += btnShowPassword_Click;
+            // 
             // V_FormLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1280, 719);
+            Controls.Add(btnShowPassword);
             Controls.Add(tbEmailLogin);
             Controls.Add(btnLogin);
             Controls.Add(tbPasswordLogin);
@@ -106,5 +121,6 @@
         private TextBox tbEmailLogin;
         private TextBox tbPasswordLogin;
         private Button btnLogin;
+        private Button btnShowPassword;
     }
 }
