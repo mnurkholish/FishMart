@@ -11,5 +11,6 @@ namespace FishMart.Repositories
     {
         List<Produk> GetListProduk();
         List<Produk> GetListProduk(int limit);
+        Produk GetLowStock();
     }
 }

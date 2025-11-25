@@ -23,5 +23,9 @@ namespace FishMart.Services
         {
             return _repo.GetListProduk(limit);
         }
+        public Produk GetLowStock()
+        {
+            return _repo.GetLowStock();
+        }
     }
 }

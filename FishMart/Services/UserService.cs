@@ -43,6 +43,7 @@ namespace FishMart.Services
 
             UserSession.Id = user.Id;
             UserSession.Username = user.Username;
+            UserSession.Email = user.Email;
             UserSession.IsAdmin = user.IsAdmin;
 
             return user;

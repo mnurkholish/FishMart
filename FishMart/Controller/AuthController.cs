@@ -40,16 +40,16 @@ namespace FishMart.Controller
                 form = new V_FormLogin(); // Sementara
             }
 
-            currentForm.Hide();
-            form.FormClosed += (s, args) => currentForm.Close();
             form.Show();
             
             return user != null;
         }
 
-        public void logout()
+        public void logout(Form currentForm)
         {
             UserSession.Clear();
+            MessageBox.Show("Logout Berhasil", "Logout", MessageBoxButtons.OK, MessageBoxIcon.None);
+            currentForm.Close();
         }
     }
 }

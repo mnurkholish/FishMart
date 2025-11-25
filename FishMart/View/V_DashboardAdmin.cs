@@ -1,5 +1,6 @@
 ﻿using FishMart.Controller;
 using FishMart.Models;
+using FishMart.Session;
 using FishMart.Utils;
 using System;
 using System.Collections.Generic;
@@ -28,38 +29,44 @@ namespace FishMart.View
 
         private void V_DashboardAdmin_Load(object sender, EventArgs e)
         {
-            List<Produk> listProduks = _produkController.GetListProduk();
+            lblUsername.Text = UserSession.Username;
+            lblEmail.Text = UserSession.Email;
+            Produk hampirHabis = _produkController.GetProdukHampirHabis();
+            lblProdukStokHampirHabis.Text = hampirHabis?.Nama ?? "Tidak ada";
+            lblStokHampirHabis.Text = hampirHabis != null ? $"sisa {hampirHabis.Stok} ekor" : "";
+            int display = 4;
+            List<Produk> listProduks = _produkController.GetListProduk(display);
             GenerateProductCards(listProduks);
         }
 
         private void GenerateProductCards(List<Produk> produkList)
         {
-            flowLayoutPanel1.Controls.Clear();
-            flowLayoutPanel1.AutoScroll = true;
+            PanelDisplayProduk.Controls.Clear();
+            PanelDisplayProduk.AutoScroll = true;
 
             foreach (var produk in produkList)
             {
                 // --- Card Panel ---
                 Panel card = new Panel
                 {
-                    Width = 150,
-                    Height = 210,
+                    Width = 220,
+                    Height = 240,
                     BackgroundImage = Properties.Resources.cardProduk,
                     BackgroundImageLayout = ImageLayout.Stretch,
                     BorderStyle = BorderStyle.None,
-                    Margin = new Padding(4),
+                    Margin = new Padding(9),
                     Padding = new Padding(0),
                 };
 
                 // --- Picture ---
                 PictureBox pic = new PictureBox
                 {
-                    Width = 95,
-                    Height = 95,
+                    Width = 110,
+                    Height = 110,
                     BackColor = Color.Transparent,
                     SizeMode = PictureBoxSizeMode.Zoom,
-                    Left = (card.Width - 95) / 2,
-                    Top = 15
+                    Left = (card.Width - 110) / 2,
+                    Top = 40
                 };
 
                 if (produk.GambarProduk != null)
@@ -78,7 +85,7 @@ namespace FishMart.View
                     ForeColor = Color.Black,
                     Width = card.Width - 10,
                     Height = 22,
-                    Top = pic.Bottom + 10,
+                    Top = pic.Bottom + 15,
                     Left = 5,
                     TextAlign = ContentAlignment.MiddleCenter
                 };
@@ -104,9 +111,13 @@ namespace FishMart.View
                 card.Controls.Add(harga);
 
                 // Tambah ke flowLayoutPanel
-                flowLayoutPanel1.Controls.Add(card);
+                PanelDisplayProduk.Controls.Add(card);
             }
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            _authController.logout(this);
+        }
     }
 }

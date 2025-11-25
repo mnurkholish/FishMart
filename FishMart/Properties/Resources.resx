@@ -118,17 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="EyesClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EyesClose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bgProduk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg-profit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EyesOpen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EyesOpen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="login_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sing_in" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sing in button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EyesClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EyesClose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trash_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trash_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sing_in_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sing in buttonn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,19 +145,13 @@
   <data name="cardProduk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bgproduk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bgProduk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg-profit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="trash_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trash_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minus_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="plus_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minus_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minus_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DashboardAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DashboardAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

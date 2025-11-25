@@ -49,11 +49,16 @@ namespace FishMart
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            bool success = _authController.Login(tbEmailLogin.Text, tbPasswordLogin.Text, this);
+            string email = tbEmailLogin.Text;
+            string password = tbPasswordLogin.Text;
+            tbEmailLogin.Text = "";
+            tbPasswordLogin.Text = "";
+            bool success = _authController.Login(email, password, this);
             if (!success)
             {
                 MessageBox.Show("Username atau Password salah. Silahkan Coba Lagi!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void btnShowPassword_Click(object sender, EventArgs e)

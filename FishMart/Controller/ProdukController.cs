@@ -23,5 +23,9 @@ namespace FishMart.Controller
         {
             return _produkService.GetListProduk(limit);
         }
+        public Produk GetProdukHampirHabis()
+        {
+            return _produkService.GetLowStock();
+        }
     }
 }
