@@ -115,6 +115,28 @@ namespace FishMart.View
             }
         }
 
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            V_DashboardAdmin dasborAdmin = new V_DashboardAdmin();
+            dasborAdmin.Show();
+        }
+
+        private void btnProduk_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnRiwayatTransaksi_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAkunKasir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            V_AkunKasir akunKasir = new V_AkunKasir();
+            akunKasir.Show();
+        }
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             _authController.logout(this);

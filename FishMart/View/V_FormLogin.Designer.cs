@@ -107,7 +107,7 @@
             Controls.Add(pictureBox1);
             Name = "V_FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormLogin";
+            Text = "FishMart";
             Load += FormLogin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

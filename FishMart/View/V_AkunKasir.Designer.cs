@@ -1,6 +1,6 @@
 ﻿namespace FishMart.View
 {
-    partial class V_DashboardAdmin
+    partial class V_AkunKasir
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            PanelDisplayProduk = new FlowLayoutPanel();
-            lblJumlahTransaksi = new Label();
-            lblTotalPenjualanBulanan = new Label();
-            lblPemasukanHariIni = new Label();
-            lblProdukStokHampirHabis = new Label();
-            lblStokHampirHabis = new Label();
             btnDashboard = new Label();
             btnAkunKasir = new Label();
             btnProduk = new Label();
@@ -42,80 +36,6 @@
             lblUsername = new Label();
             lblEmail = new Label();
             SuspendLayout();
-            // 
-            // PanelDisplayProduk
-            // 
-            PanelDisplayProduk.AutoScroll = true;
-            PanelDisplayProduk.BackColor = Color.Transparent;
-            PanelDisplayProduk.Location = new Point(288, 428);
-            PanelDisplayProduk.Name = "PanelDisplayProduk";
-            PanelDisplayProduk.Size = new Size(952, 270);
-            PanelDisplayProduk.TabIndex = 1;
-            // 
-            // lblJumlahTransaksi
-            // 
-            lblJumlahTransaksi.AutoSize = true;
-            lblJumlahTransaksi.BackColor = Color.Transparent;
-            lblJumlahTransaksi.Font = new Font("Poppins SemiBold", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblJumlahTransaksi.ForeColor = SystemColors.ControlText;
-            lblJumlahTransaksi.Location = new Point(297, 159);
-            lblJumlahTransaksi.Name = "lblJumlahTransaksi";
-            lblJumlahTransaksi.Size = new Size(47, 60);
-            lblJumlahTransaksi.TabIndex = 0;
-            lblJumlahTransaksi.Text = "0";
-            lblJumlahTransaksi.TextAlign = ContentAlignment.BottomLeft;
-            // 
-            // lblTotalPenjualanBulanan
-            // 
-            lblTotalPenjualanBulanan.AutoSize = true;
-            lblTotalPenjualanBulanan.BackColor = Color.Transparent;
-            lblTotalPenjualanBulanan.Font = new Font("Poppins SemiBold", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotalPenjualanBulanan.ForeColor = SystemColors.ControlText;
-            lblTotalPenjualanBulanan.Location = new Point(297, 244);
-            lblTotalPenjualanBulanan.Name = "lblTotalPenjualanBulanan";
-            lblTotalPenjualanBulanan.Size = new Size(92, 60);
-            lblTotalPenjualanBulanan.TabIndex = 5;
-            lblTotalPenjualanBulanan.Text = "Rp0";
-            lblTotalPenjualanBulanan.TextAlign = ContentAlignment.BottomLeft;
-            // 
-            // lblPemasukanHariIni
-            // 
-            lblPemasukanHariIni.AutoSize = true;
-            lblPemasukanHariIni.BackColor = Color.Transparent;
-            lblPemasukanHariIni.Font = new Font("Poppins SemiBold", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPemasukanHariIni.ForeColor = SystemColors.ControlText;
-            lblPemasukanHariIni.Location = new Point(622, 244);
-            lblPemasukanHariIni.Name = "lblPemasukanHariIni";
-            lblPemasukanHariIni.Size = new Size(92, 60);
-            lblPemasukanHariIni.TabIndex = 6;
-            lblPemasukanHariIni.Text = "Rp0";
-            lblPemasukanHariIni.TextAlign = ContentAlignment.BottomLeft;
-            // 
-            // lblProdukStokHampirHabis
-            // 
-            lblProdukStokHampirHabis.AutoSize = true;
-            lblProdukStokHampirHabis.BackColor = Color.Transparent;
-            lblProdukStokHampirHabis.Font = new Font("Poppins SemiBold", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblProdukStokHampirHabis.ForeColor = SystemColors.ControlText;
-            lblProdukStokHampirHabis.Location = new Point(953, 244);
-            lblProdukStokHampirHabis.Name = "lblProdukStokHampirHabis";
-            lblProdukStokHampirHabis.Size = new Size(167, 60);
-            lblProdukStokHampirHabis.TabIndex = 7;
-            lblProdukStokHampirHabis.Text = "Gurame";
-            lblProdukStokHampirHabis.TextAlign = ContentAlignment.BottomLeft;
-            // 
-            // lblStokHampirHabis
-            // 
-            lblStokHampirHabis.AutoSize = true;
-            lblStokHampirHabis.BackColor = Color.Transparent;
-            lblStokHampirHabis.Font = new Font("Poppins", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStokHampirHabis.ForeColor = Color.LightCoral;
-            lblStokHampirHabis.Location = new Point(967, 293);
-            lblStokHampirHabis.Name = "lblStokHampirHabis";
-            lblStokHampirHabis.Size = new Size(106, 30);
-            lblStokHampirHabis.TabIndex = 8;
-            lblStokHampirHabis.Text = "sisa 0 ekor";
-            lblStokHampirHabis.TextAlign = ContentAlignment.BottomLeft;
             // 
             // btnDashboard
             // 
@@ -218,7 +138,7 @@
             lblEmail.Text = "Email@gmail.com";
             lblEmail.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // V_DashboardAdmin
+            // V_AkunKasir
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -231,27 +151,15 @@
             Controls.Add(btnProduk);
             Controls.Add(btnAkunKasir);
             Controls.Add(btnDashboard);
-            Controls.Add(lblStokHampirHabis);
-            Controls.Add(lblProdukStokHampirHabis);
-            Controls.Add(lblPemasukanHariIni);
-            Controls.Add(lblTotalPenjualanBulanan);
-            Controls.Add(lblJumlahTransaksi);
-            Controls.Add(PanelDisplayProduk);
-            Name = "V_DashboardAdmin";
+            Name = "V_AkunKasir";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FishMart";
-            Load += V_DashboardAdmin_Load;
+            Load += V_AkunKasir_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private FlowLayoutPanel PanelDisplayProduk;
-        private Label lblJumlahTransaksi;
-        private Label lblTotalPenjualanBulanan;
-        private Label lblPemasukanHariIni;
-        private Label lblProdukStokHampirHabis;
-        private Label lblStokHampirHabis;
         private Label btnDashboard;
         private Label btnAkunKasir;
         private Label btnProduk;
