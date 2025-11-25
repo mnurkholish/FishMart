@@ -124,10 +124,16 @@ namespace FishMart.View
 
         private void btnProduk_Click(object sender, EventArgs e)
         {
+            this.Close();
+            V_Produk produk = new V_Produk();
+            produk.Show();
         }
 
         private void btnRiwayatTransaksi_Click(object sender, EventArgs e)
         {
+            this.Close();
+            V_RiwayatTransaksi riwayatTransaksi = new V_RiwayatTransaksi();
+            riwayatTransaksi.Show();
         }
 
         private void btnAkunKasir_Click(object sender, EventArgs e)

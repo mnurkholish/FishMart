@@ -15,19 +15,19 @@ using System.Windows.Forms;
 
 namespace FishMart.View
 {
-    public partial class V_AkunKasir : Form
+    public partial class V_Produk : Form
     {
         private readonly AuthController _authController;
         private readonly ProdukController _produkController;
 
-        public V_AkunKasir()
+        public V_Produk()
         {
             InitializeComponent();
             _authController = new AuthController();
             _produkController = new ProdukController();
         }
 
-        private void V_AkunKasir_Load(object sender, EventArgs e)
+        private void V_Produk_Load(object sender, EventArgs e)
         {
             lblUsername.Text = UserSession.Username;
             lblEmail.Text = UserSession.Email;
