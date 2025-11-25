@@ -35,6 +35,7 @@
             btnLogout = new Label();
             lblUsername = new Label();
             lblEmail = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // btnDashboard
@@ -138,12 +139,22 @@
             lblEmail.Text = "Email@gmail.com";
             lblEmail.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // V_DashboardAdmin
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.Transparent;
+            flowLayoutPanel1.Location = new Point(284, 91);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(960, 600);
+            flowLayoutPanel1.TabIndex = 16;
+            flowLayoutPanel1.AutoScroll = true;
+            // 
+            // V_Produk
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.BgDashboardAdmin;
+            BackgroundImage = Properties.Resources.BgProdukAdmin;
             ClientSize = new Size(1280, 720);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(lblEmail);
             Controls.Add(lblUsername);
             Controls.Add(btnLogout);
@@ -167,5 +178,6 @@
         private Label btnLogout;
         private Label lblUsername;
         private Label lblEmail;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
