@@ -25,23 +25,5 @@ namespace FishMart.Utils
 
             return new NpgsqlConnection(connString);
         }
-
-        public static DataTable GetProducts()
-        {
-            using (var conn = GetConnection())
-            {
-                conn.Open();
-
-                string query = "SELECT id, nama_produk, harga, stok, gambar_produk FROM produk";
-
-                using (var cmd = new NpgsqlCommand(query, conn))
-                using (var da = new NpgsqlDataAdapter(cmd))
-                {
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    return dt;
-                }
-            }
-        }
     }
 }
