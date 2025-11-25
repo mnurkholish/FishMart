@@ -138,11 +138,11 @@
             lblEmail.Text = "Email@gmail.com";
             lblEmail.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // V_DashboardAdmin
+            // V_RiwayatTransaksi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.BgDashboardAdmin;
+            BackgroundImage = Properties.Resources.BgRiwayatTransaksiAdmin;
             ClientSize = new Size(1280, 720);
             Controls.Add(lblEmail);
             Controls.Add(lblUsername);
