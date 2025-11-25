@@ -84,7 +84,7 @@
             lblPemasukanHariIni.BackColor = Color.Transparent;
             lblPemasukanHariIni.Font = new Font("Poppins SemiBold", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPemasukanHariIni.ForeColor = SystemColors.ControlText;
-            lblPemasukanHariIni.Location = new Point(622, 244);
+            lblPemasukanHariIni.Location = new Point(632, 244);
             lblPemasukanHariIni.Name = "lblPemasukanHariIni";
             lblPemasukanHariIni.Size = new Size(92, 60);
             lblPemasukanHariIni.TabIndex = 6;
