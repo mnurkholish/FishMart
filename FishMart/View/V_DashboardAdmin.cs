@@ -1,93 +1,109 @@
 ﻿using FishMart.Controller;
+using FishMart.Models;
 using FishMart.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;   // ❗ WAJIB untuk MemoryStream
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;   // ❗ WAJIB untuk MemoryStream
 
 namespace FishMart.View
 {
     public partial class V_DashboardAdmin : Form
     {
         private readonly AuthController _authController;
+        private readonly ProdukController _produkController;
 
         public V_DashboardAdmin()
         {
             InitializeComponent();
             _authController = new AuthController();
-
+            _produkController = new ProdukController();
         }
 
         private void V_DashboardAdmin_Load(object sender, EventArgs e)
         {
-            DataTable dt = Database.GetProducts();
-            GenerateProductCards(dt);
+            List<Produk> listProduks = _produkController.GetListProduk();
+            GenerateProductCards(listProduks);
         }
 
-        private void GenerateProductCards(DataTable dt)
+        private void GenerateProductCards(List<Produk> produkList)
         {
             flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel1.AutoScroll = true;
 
-            foreach (DataRow row in dt.Rows)
+            foreach (var produk in produkList)
             {
+                // --- Card Panel ---
                 Panel card = new Panel
                 {
-                    Size = new Size(149, 204),                // ukuran sama seperti background
+                    Width = 150,
+                    Height = 210,
                     BackgroundImage = Properties.Resources.cardProduk,
-                    BackgroundImageLayout = ImageLayout.Zoom,
+                    BackgroundImageLayout = ImageLayout.Stretch,
                     BorderStyle = BorderStyle.None,
-                    Margin = new Padding(6)
-                    
+                    Margin = new Padding(4),
+                    Padding = new Padding(0),
                 };
 
+                // --- Picture ---
                 PictureBox pic = new PictureBox
                 {
-                    Size = new Size(90, 90),                 // diperkecil agar proporsional
+                    Width = 95,
+                    Height = 95,
                     BackColor = Color.Transparent,
-                    Location = new Point((149 - 90) / 2, 15), // center otomatis
-                    SizeMode = PictureBoxSizeMode.Zoom
+                    SizeMode = PictureBoxSizeMode.Zoom,
+                    Left = (card.Width - 95) / 2,
+                    Top = 15
                 };
 
-                // Convert BYTEA → Image
-                if (row["gambar_produk"] != DBNull.Value)
+                if (produk.GambarProduk != null)
                 {
-                    byte[] imgBytes = (byte[])row["gambar_produk"];
-                    using (MemoryStream ms = new MemoryStream(imgBytes))
-                    {
-                        pic.Image = Image.FromStream(ms);
-                    }
+                    using var ms = new MemoryStream(produk.GambarProduk);
+                    pic.Image = Image.FromStream(ms);
                 }
 
+                // --- Nama Produk ---
                 Label nama = new Label
                 {
-                    Text = row["nama_produk"].ToString(),
+                    AutoSize = false,
+                    Text = produk.Nama,
                     Font = new Font("SF Pro Display", 10, FontStyle.Bold),
                     BackColor = Color.Transparent,
-                    Location = new Point(5, 120),
-                    Size = new Size(139, 20),
+                    ForeColor = Color.Black,
+                    Width = card.Width - 10,
+                    Height = 22,
+                    Top = pic.Bottom + 10,
+                    Left = 5,
                     TextAlign = ContentAlignment.MiddleCenter
                 };
 
+                // --- Harga Produk ---
                 Label harga = new Label
                 {
-                    Text = "Rp " + row["harga"].ToString(),
+                    AutoSize = false,
+                    Text = "Rp " + produk.Harga.ToString("N0"),
                     Font = new Font("SF Pro Display", 11, FontStyle.Bold),
                     BackColor = Color.Transparent,
-                    Location = new Point(5, 145),
-                    Size = new Size(139, 22),
+                    ForeColor = Color.Firebrick,
+                    Width = card.Width - 10,
+                    Height = 24,
+                    Top = nama.Bottom + 5,
+                    Left = 5,
                     TextAlign = ContentAlignment.MiddleCenter
                 };
 
+                // Menambahkan ke card
                 card.Controls.Add(pic);
                 card.Controls.Add(nama);
                 card.Controls.Add(harga);
 
+                // Tambah ke flowLayoutPanel
                 flowLayoutPanel1.Controls.Add(card);
             }
         }
