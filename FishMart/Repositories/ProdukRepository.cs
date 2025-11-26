@@ -1,5 +1,7 @@
 ﻿using FishMart.Models;
 using FishMart.Utils;
+using FishMart.Controller;
+using System.IO;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -18,7 +20,7 @@ namespace FishMart.Repositories
             using var conn = Database.GetConnection();
             conn.Open();
 
-            string query = "SELECT id, nama_produk, harga, stok, gambar_produk FROM produk";
+            string query = "SELECT * FROM produk WHERE is_delete = false ORDER BY id ASC";
 
             using var cmd = new NpgsqlCommand(query, conn);
             using var reader = cmd.ExecuteReader();
@@ -45,7 +47,7 @@ namespace FishMart.Repositories
             using var conn = Database.GetConnection();
             conn.Open();
 
-            string query = "SELECT id, nama_produk, harga, stok, gambar_produk FROM produk LIMIT @limit";
+            string query = "SELECT id, nama_produk, harga, stok, gambar_produk FROM produk WHERE is_delete = false LIMIT @limit";
 
             using var cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("limit", limit);
@@ -73,7 +75,7 @@ namespace FishMart.Repositories
             conn.Open();
 
             string query = @"
-            SELECT id, nama_produk, harga, stok, gambar_produk 
+            SELECT id, nama_produk, harga, stok, gambar_produk, is_delete 
             FROM produk
             WHERE stok > 0 AND stok < 10
             ORDER BY stok ASC
@@ -90,11 +92,68 @@ namespace FishMart.Repositories
                     Nama = reader.GetString(1),
                     Harga = reader.GetInt32(2),
                     Stok = reader.GetInt32(3),
-                    GambarProduk = reader.IsDBNull(4) ? null : (byte[])reader["gambar_produk"]
+                    GambarProduk = reader.IsDBNull(4) ? null : (byte[])reader["gambar_produk"],
+                    IsDelete = reader.GetBoolean(5)
                 };
             }
 
             return null;
         }
+
+        public void InsertProduk(Produk produk)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            string query = @"
+            INSERT INTO produk (nama_produk, harga, stok, gambar_produk)
+            VALUES (@nama, @harga, @stok, @gambar)";
+
+            using var cmd = new NpgsqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nama", produk.Nama);
+            cmd.Parameters.AddWithValue("@harga", produk.Harga);
+            cmd.Parameters.AddWithValue("@stok", produk.Stok);
+            cmd.Parameters.AddWithValue("@gambar", (object?)produk.GambarProduk ?? DBNull.Value);
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void UpdateProduk(Produk produk)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            string query = @"
+            UPDATE produk
+            SET nama_produk = @nama,
+            harga = @harga,
+            stok = @stok,
+            gambar_produk = @gambar
+            WHERE id = @id";
+
+            using var cmd = new NpgsqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nama", produk.Nama);
+            cmd.Parameters.AddWithValue("@harga", produk.Harga);
+            cmd.Parameters.AddWithValue("@stok", produk.Stok);
+            cmd.Parameters.AddWithValue("@gambar", (object?)produk.GambarProduk ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@id", produk.Id);
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void DeleteProduk(int produkId)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            string query = "UPDATE produk SET is_delete = TRUE WHERE id = @id";
+
+            using var cmd = new NpgsqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id", produkId);
+
+            cmd.ExecuteNonQuery();
+        }
+
+
     }
 }
