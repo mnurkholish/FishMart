@@ -12,7 +12,7 @@ namespace FishMart.Controller
 {
     public class UserController
     {
-        private readonly UserService _userService;
+        private readonly IUserService _userService;
 
         public UserController()
         {

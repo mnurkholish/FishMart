@@ -10,22 +10,16 @@ namespace FishMart.Services
 {
     public class ProdukService : IProdukService
     {
-        private readonly ProdukRepository _repo;
+        private readonly IProdukRepository _repo;
         public ProdukService()
         {
             _repo = new ProdukRepository();
         }
-        public List<Produk> GetListProduk()
-        {
-            return _repo.GetListProduk();
-        }
-        public List<Produk> GetListProduk(int limit)
-        {
-            return _repo.GetListProduk(limit);
-        }
-        public Produk? GetLowStock()
-        {
-            return _repo.GetLowStock();
-        }
+
+        public List<Produk> GetListProduk() => _repo.GetListProduk();
+
+        public List<Produk> GetListProduk(int limit) => _repo.GetListProduk(limit);
+
+        public Produk? GetLowStock() => _repo.GetLowStock();
     }
 }

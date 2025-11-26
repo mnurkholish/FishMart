@@ -8,9 +8,12 @@ namespace FishMart.Models
 {
     public class Transaksi
     {
-        public int IdTransaksi { get; set; }
-        public int IdProduk { get; set; }
-        public int Jumlah { get; set; }
+        public int Id { get; set; }
+        public int UserId { get; set; }
+        public int TotalHarga { get; set; }
         public DateTime Tanggal { get; set; }
+
+        public User User { get; set; }
+        public List<DetailTransaksi> DetailTransaksiList { get; set; }
     }
 }

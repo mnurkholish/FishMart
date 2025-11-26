@@ -10,7 +10,7 @@ namespace FishMart.Controller
 {
     public class ProdukController
     {
-        private readonly ProdukService _produkService;
+        private readonly IProdukService _produkService;
         public ProdukController()
         {
             _produkService = new ProdukService();

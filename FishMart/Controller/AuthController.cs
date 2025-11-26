@@ -16,7 +16,7 @@ namespace FishMart.Controller
 {
     public class AuthController
     {
-        private readonly UserService _service;
+        private readonly IUserService _service;
 
         public AuthController()
         {

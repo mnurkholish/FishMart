@@ -10,7 +10,7 @@ namespace FishMart.Services
 {
     public class UserService : IUserService
     {
-        private readonly UserRepository _repo;
+        private readonly IUserRepository _repo;
 
         public UserService()
         {
@@ -92,9 +92,6 @@ namespace FishMart.Services
             dgv.DataSource = listKasir;
         }
 
-        public void ToggleUserStatus(int userId)
-        {
-            _repo.ToggleStatus(userId);
-        }
+        public void ToggleUserStatus(int userId) => _repo.ToggleStatus(userId);
     }
 }
