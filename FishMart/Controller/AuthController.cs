@@ -23,7 +23,7 @@ namespace FishMart.Controller
             _service = new UserService();
         }
 
-        public bool Login(string username, string password, Form currentForm)
+        public bool Login(string username, string password)
         {
             var user = _service.Login(username, password);
             if (user == null) return false;

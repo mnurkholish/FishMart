@@ -1,8 +1,10 @@
 
-using FishMart.Repositories;
-using FishMart.Models;
 using BCrypt.Net;
+using FishMart.Models;
+using FishMart.Repositories;
 using FishMart.Session;
+using System.Data;
+using System.Text.RegularExpressions;
 
 namespace FishMart.Services
 {
@@ -17,8 +19,41 @@ namespace FishMart.Services
 
         public bool Create(string email, string password, string username, string noTelp)
         {
-            if (_repo.GetUserByEmail(email) != null)
+            
+
+            // --- VALIDASI EMAIL ---
+            if (!email.Contains("@"))
+            {
+                MessageBox.Show("Email Tidak Valid!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
+            }
+
+            // --- VALIDASI PASSWORD ---
+            if (password.Length < 6)
+            {
+                MessageBox.Show("Password harus lebih dari 6 karakter!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // --- VALIDASI USERNAME ---
+            if (username.Length < 3)
+            {
+                MessageBox.Show("Username harus lebih dari 3 karakter!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // --- VALIDASI NO TELEP ---
+            if (noTelp.Length < 10 || noTelp.Length > 15 || !noTelp.All(char.IsDigit))
+            {
+                MessageBox.Show("Nomor telepon tidak valid!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (_repo.GetUserByEmail(email) != null)
+            {
+                MessageBox.Show("Email sudah terpakai. Silahkan gunakan email lain!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
 
             string hash = BCrypt.Net.BCrypt.HashPassword(password);
 
@@ -47,6 +82,12 @@ namespace FishMart.Services
             UserSession.IsAdmin = user.IsAdmin;
 
             return user;
+        }
+
+        public void FillWithAkunKasir(DataGridView dgv)
+        {
+            DataTable dt = _repo.GetAkunKasir();
+            dgv.DataSource = dt;
         }
     }
 }

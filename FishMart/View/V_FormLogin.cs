@@ -53,7 +53,7 @@ namespace FishMart
             string password = tbPasswordLogin.Text;
             tbEmailLogin.Text = "";
             tbPasswordLogin.Text = "";
-            bool success = _authController.Login(email, password, this);
+            bool success = _authController.Login(email, password);
             if (!success)
             {
                 MessageBox.Show("Username atau Password salah. Silahkan Coba Lagi!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

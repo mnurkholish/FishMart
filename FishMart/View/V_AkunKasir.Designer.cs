@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             btnDashboard = new Label();
             btnAkunKasir = new Label();
             btnProduk = new Label();
@@ -35,6 +36,17 @@
             btnLogout = new Label();
             lblUsername = new Label();
             lblEmail = new Label();
+            dataGridAkunKasir = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            Email = new DataGridViewTextBoxColumn();
+            PasswordHash = new DataGridViewTextBoxColumn();
+            Username = new DataGridViewTextBoxColumn();
+            NoTelp = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewButtonColumn();
+            StatusColumn = new DataGridViewTextBoxColumn();
+            Toggle = new DataGridViewButtonColumn();
+            btnTambahAkunKasir = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridAkunKasir).BeginInit();
             SuspendLayout();
             // 
             // btnDashboard
@@ -138,12 +150,122 @@
             lblEmail.Text = "Email@gmail.com";
             lblEmail.TextAlign = ContentAlignment.BottomLeft;
             // 
+            // dataGridAkunKasir
+            // 
+            dataGridAkunKasir.AllowUserToAddRows = false;
+            dataGridAkunKasir.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridAkunKasir.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridAkunKasir.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridAkunKasir.Columns.AddRange(new DataGridViewColumn[] { ID, Email, PasswordHash, Username, NoTelp, Edit, StatusColumn, Toggle });
+            dataGridAkunKasir.Location = new Point(283, 114);
+            dataGridAkunKasir.Name = "dataGridAkunKasir";
+            dataGridAkunKasir.ReadOnly = true;
+            dataGridAkunKasir.RowHeadersVisible = false;
+            dataGridAkunKasir.RowHeadersWidth = 51;
+            dataGridAkunKasir.Size = new Size(950, 458);
+            dataGridAkunKasir.TabIndex = 16;
+            // 
+            // ID
+            // 
+            ID.DataPropertyName = "Id";
+            ID.HeaderText = "Id";
+            ID.MinimumWidth = 6;
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            ID.Resizable = DataGridViewTriState.False;
+            ID.Width = 40;
+            // 
+            // Email
+            // 
+            Email.DataPropertyName = "Email";
+            Email.HeaderText = "Email";
+            Email.MinimumWidth = 6;
+            Email.Name = "Email";
+            Email.ReadOnly = true;
+            Email.Resizable = DataGridViewTriState.False;
+            Email.Width = 257;
+            // 
+            // PasswordHash
+            // 
+            PasswordHash.DataPropertyName = "PasswordHash";
+            PasswordHash.HeaderText = "Password";
+            PasswordHash.MinimumWidth = 6;
+            PasswordHash.Name = "PasswordHash";
+            PasswordHash.ReadOnly = true;
+            PasswordHash.Width = 170;
+            // 
+            // Username
+            // 
+            Username.DataPropertyName = "Username";
+            Username.HeaderText = "Username";
+            Username.MinimumWidth = 6;
+            Username.Name = "Username";
+            Username.ReadOnly = true;
+            Username.Width = 160;
+            // 
+            // NoTelp
+            // 
+            NoTelp.DataPropertyName = "NoTelp";
+            NoTelp.HeaderText = "No Telp";
+            NoTelp.MinimumWidth = 6;
+            NoTelp.Name = "NoTelp";
+            NoTelp.ReadOnly = true;
+            NoTelp.Width = 140;
+            // 
+            // Edit
+            // 
+            Edit.DataPropertyName = "Edit";
+            Edit.HeaderText = "Edit";
+            Edit.MinimumWidth = 6;
+            Edit.Name = "Edit";
+            Edit.ReadOnly = true;
+            Edit.Width = 60;
+            // 
+            // StatusColumn
+            // 
+            StatusColumn.HeaderText = "Status";
+            StatusColumn.MinimumWidth = 6;
+            StatusColumn.Name = "StatusColumn";
+            StatusColumn.ReadOnly = true;
+            StatusColumn.Width = 60;
+            // 
+            // Toggle
+            // 
+            Toggle.DataPropertyName = "Toggle";
+            Toggle.HeaderText = "Ubah Status";
+            Toggle.MinimumWidth = 6;
+            Toggle.Name = "Toggle";
+            Toggle.ReadOnly = true;
+            Toggle.Width = 60;
+            // 
+            // btnTambahAkunKasir
+            // 
+            btnTambahAkunKasir.BackColor = Color.DeepSkyBlue;
+            btnTambahAkunKasir.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTambahAkunKasir.ForeColor = SystemColors.ButtonHighlight;
+            btnTambahAkunKasir.Location = new Point(1122, 72);
+            btnTambahAkunKasir.Name = "btnTambahAkunKasir";
+            btnTambahAkunKasir.Size = new Size(111, 36);
+            btnTambahAkunKasir.TabIndex = 17;
+            btnTambahAkunKasir.Text = "+ Akun Kasir";
+            btnTambahAkunKasir.UseVisualStyleBackColor = false;
+            btnTambahAkunKasir.Click += btnTambahAkunKasir_Click;
+            // 
             // V_AkunKasir
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.BgAkunKasirAdmin;
             ClientSize = new Size(1280, 720);
+            Controls.Add(btnTambahAkunKasir);
+            Controls.Add(dataGridAkunKasir);
             Controls.Add(lblEmail);
             Controls.Add(lblUsername);
             Controls.Add(btnLogout);
@@ -155,6 +277,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FishMart";
             Load += V_AkunKasir_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridAkunKasir).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -167,5 +290,15 @@
         private Label btnLogout;
         private Label lblUsername;
         private Label lblEmail;
+        private DataGridView dataGridAkunKasir;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Email;
+        private DataGridViewTextBoxColumn PasswordHash;
+        private DataGridViewTextBoxColumn Username;
+        private DataGridViewTextBoxColumn NoTelp;
+        private DataGridViewButtonColumn Edit;
+        private DataGridViewTextBoxColumn StatusColumn;
+        private DataGridViewButtonColumn Toggle;
+        private Button btnTambahAkunKasir;
     }
 }

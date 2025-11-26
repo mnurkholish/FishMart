@@ -2,6 +2,7 @@
 using FishMart.Models;
 using FishMart.Utils;
 using Npgsql;
+using System.Data;
 
 namespace FishMart.Repositories
 {
@@ -47,6 +48,21 @@ namespace FishMart.Repositories
             cmd.Parameters.AddWithValue("@n", user.NoTelp);
 
             cmd.ExecuteNonQuery();
+        }
+
+        public DataTable GetAkunKasir()
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            using var data = new NpgsqlDataAdapter(
+                @"SELECT id, email, password_hash, username, no_telp
+                  FROM users 
+                  WHERE is_admin = false", conn);
+
+            DataTable dt = new DataTable();
+            data.Fill(dt);
+            return dt;
         }
     }
 }

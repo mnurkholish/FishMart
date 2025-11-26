@@ -1,6 +1,7 @@
 
 using FishMart.Models;
 using System.Collections.Generic;
+using System.Data;
 
 namespace FishMart.Repositories
 {
@@ -8,5 +9,6 @@ namespace FishMart.Repositories
     {
         User GetUserByEmail(string email);
         void Create(User user);
+        DataTable GetAkunKasir();
     }
 }

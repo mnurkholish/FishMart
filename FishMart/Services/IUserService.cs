@@ -1,4 +1,5 @@
 using FishMart.Models;
+using System.Data;
 
 namespace FishMart.Services
 {
@@ -6,5 +7,6 @@ namespace FishMart.Services
     {
         bool Create(string email, string password, string username, string noTelp);
         User Login(string email, string password);
+        void FillWithAkunKasir(DataGridView dgv);
     }
 }

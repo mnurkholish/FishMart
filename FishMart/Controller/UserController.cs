@@ -18,8 +18,21 @@ namespace FishMart.Controller
         }
         public bool createUser(string email, string password, string username, string noTelp)
         {
+            if (string.IsNullOrWhiteSpace(email) ||
+                string.IsNullOrWhiteSpace(password) ||
+                string.IsNullOrWhiteSpace(username) ||
+                string.IsNullOrWhiteSpace(noTelp))
+            {
+                MessageBox.Show("Data tidak boleh kosong, isi semua kolom yang ada", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             var user = _userService.Create(email, password, username, noTelp);
             return user;
+        }
+        public void FillDataWithAkunKasir(DataGridView dataGrid)
+        {
+            _userService.FillWithAkunKasir(dataGrid);
         }
     }
 }

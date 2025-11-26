@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;   // ❗ WAJIB untuk MemoryStream
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,19 +18,21 @@ namespace FishMart.View
     public partial class V_AkunKasir : Form
     {
         private readonly AuthController _authController;
-        private readonly ProdukController _produkController;
+        private readonly UserController _userController;
 
         public V_AkunKasir()
         {
             InitializeComponent();
             _authController = new AuthController();
-            _produkController = new ProdukController();
+            _userController = new UserController();
         }
 
         private void V_AkunKasir_Load(object sender, EventArgs e)
         {
             lblUsername.Text = UserSession.Username;
             lblEmail.Text = UserSession.Email;
+
+            _userController.FillDataWithAkunKasir(dataGridAkunKasir);
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -64,6 +66,13 @@ namespace FishMart.View
         private void btnLogout_Click(object sender, EventArgs e)
         {
             _authController.logout(this);
+        }
+
+        private void btnTambahAkunKasir_Click(object sender, EventArgs e)
+        {
+            PopupTambahAkunKasir tambahAkunKasir = new PopupTambahAkunKasir();
+            tambahAkunKasir.ShowDialog();
+            V_AkunKasir_Load(this, EventArgs.Empty);
         }
     }
 }
