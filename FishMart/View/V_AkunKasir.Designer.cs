@@ -72,9 +72,9 @@
             btnAkunKasir.ForeColor = SystemColors.ControlText;
             btnAkunKasir.Location = new Point(58, 255);
             btnAkunKasir.Name = "btnAkunKasir";
-            btnAkunKasir.Size = new Size(87, 26);
+            btnAkunKasir.Size = new Size(91, 26);
             btnAkunKasir.TabIndex = 10;
-            btnAkunKasir.Text = "AkunKasir";
+            btnAkunKasir.Text = "Akun Kasir";
             btnAkunKasir.TextAlign = ContentAlignment.BottomLeft;
             btnAkunKasir.Click += btnAkunKasir_Click;
             // 
