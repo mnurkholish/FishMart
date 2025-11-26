@@ -14,7 +14,7 @@ namespace FishMart.Repositories
             conn.Open();
 
             using var cmd = new NpgsqlCommand(
-                @"SELECT id, email, password_hash, username, no_telp, is_admin
+                @"SELECT id, email, password_hash, username, no_telp, is_admin, is_active
                   FROM users 
                   WHERE email = @e", conn);
             cmd.Parameters.AddWithValue("@e", email);
@@ -29,7 +29,8 @@ namespace FishMart.Repositories
                 PasswordHash = reader.GetString(2),
                 Username = reader.GetString(3),
                 NoTelp = reader.GetString(4),
-                IsAdmin = reader.GetBoolean(5)
+                IsAdmin = reader.GetBoolean(5),
+                IsActive = reader.GetBoolean(6)
             };
         }
 
@@ -50,19 +51,48 @@ namespace FishMart.Repositories
             cmd.ExecuteNonQuery();
         }
 
-        public DataTable GetAkunKasir()
+        public List<User> GetAkunKasir()
         {
             using var conn = Database.GetConnection();
             conn.Open();
 
-            using var data = new NpgsqlDataAdapter(
-                @"SELECT id, email, password_hash, username, no_telp
-                  FROM users 
-                  WHERE is_admin = false", conn);
+            string query = @"
+            SELECT id, email, username, no_telp, is_active
+            FROM users
+            WHERE is_admin = false;";
 
-            DataTable dt = new DataTable();
-            data.Fill(dt);
-            return dt;
+            using var cmd = new NpgsqlCommand(query, conn);
+            using var reader = cmd.ExecuteReader();
+
+            List<User> list = new List<User>();
+
+            while (reader.Read())
+            {
+                list.Add(new User
+                {
+                    Id = reader.GetInt32(reader.GetOrdinal("id")),
+                    Email = reader.GetString(reader.GetOrdinal("email")),
+                    Username = reader.GetString(reader.GetOrdinal("username")),
+                    NoTelp = reader.GetString(reader.GetOrdinal("no_telp")),
+                    IsActive = reader.GetBoolean(reader.GetOrdinal("is_active"))
+                });
+            }
+
+            return list;
+        }
+
+        public void ToggleStatus(int userId)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+            
+            var query = @"UPDATE Users SET is_active = NOT is_active WHERE Id = @UserId";
+            
+            using var cmd = new NpgsqlCommand(query, conn);
+            
+            cmd.Parameters.AddWithValue("@UserId", userId);
+            
+            cmd.ExecuteNonQuery();
         }
     }
 }

@@ -35,6 +35,16 @@ namespace FishMart.View
             _userController.FillDataWithAkunKasir(dataGridAkunKasir);
         }
 
+        private void dataGridAkunKasir_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridAkunKasir.Columns["Toggle"].Index && e.RowIndex >= 0)
+            {
+                int userId = (int)dataGridAkunKasir.Rows[e.RowIndex].Cells["Id"].Value;
+                _userController.ToggleUserStatus(userId);
+                V_AkunKasir_Load(this, EventArgs.Empty);
+            }
+        }
+
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             this.Close();

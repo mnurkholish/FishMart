@@ -9,6 +9,7 @@ namespace FishMart.Repositories
     {
         User GetUserByEmail(string email);
         void Create(User user);
-        DataTable GetAkunKasir();
+        List<User> GetAkunKasir();
+        void ToggleStatus(int userId);
     }
 }

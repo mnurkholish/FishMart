@@ -73,6 +73,8 @@ namespace FishMart.Services
             var user = _repo.GetUserByEmail(email);
             if (user == null) return null;
 
+            if (!user.IsActive) return null;
+
             bool valid = BCrypt.Net.BCrypt.Verify(password, user.PasswordHash);
             if (!valid) return null;
 
@@ -86,8 +88,13 @@ namespace FishMart.Services
 
         public void FillWithAkunKasir(DataGridView dgv)
         {
-            DataTable dt = _repo.GetAkunKasir();
-            dgv.DataSource = dt;
+            List<User> listKasir = _repo.GetAkunKasir().OrderBy(u => u.Id).ToList();
+            dgv.DataSource = listKasir;
+        }
+
+        public void ToggleUserStatus(int userId)
+        {
+            _repo.ToggleStatus(userId);
         }
     }
 }

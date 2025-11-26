@@ -1,10 +1,12 @@
 ﻿using FishMart.Services;
 using FishMart.Session;
+using Sprache;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Xsl;
 
 namespace FishMart.Controller
 {
@@ -33,6 +35,18 @@ namespace FishMart.Controller
         public void FillDataWithAkunKasir(DataGridView dataGrid)
         {
             _userService.FillWithAkunKasir(dataGrid);
+        }
+
+        public void ToggleUserStatus(int userId)
+        {
+            DialogResult result = MessageBox.Show("Apakah anda yakin ingin mengubah status kasir ini?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                _userService.ToggleUserStatus(userId);
+                MessageBox.Show("Status berhasil diubah", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
     }
 }

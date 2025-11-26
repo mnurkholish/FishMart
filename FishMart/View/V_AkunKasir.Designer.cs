@@ -39,10 +39,8 @@
             dataGridAkunKasir = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
             Email = new DataGridViewTextBoxColumn();
-            PasswordHash = new DataGridViewTextBoxColumn();
             Username = new DataGridViewTextBoxColumn();
             NoTelp = new DataGridViewTextBoxColumn();
-            Edit = new DataGridViewButtonColumn();
             StatusColumn = new DataGridViewTextBoxColumn();
             Toggle = new DataGridViewButtonColumn();
             btnTambahAkunKasir = new Button();
@@ -163,24 +161,28 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridAkunKasir.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridAkunKasir.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridAkunKasir.Columns.AddRange(new DataGridViewColumn[] { ID, Email, PasswordHash, Username, NoTelp, Edit, StatusColumn, Toggle });
+            dataGridAkunKasir.Columns.AddRange(new DataGridViewColumn[] { ID, Email, Username, NoTelp, StatusColumn, Toggle });
             dataGridAkunKasir.Location = new Point(283, 114);
             dataGridAkunKasir.Name = "dataGridAkunKasir";
             dataGridAkunKasir.ReadOnly = true;
             dataGridAkunKasir.RowHeadersVisible = false;
             dataGridAkunKasir.RowHeadersWidth = 51;
-            dataGridAkunKasir.Size = new Size(950, 458);
+            dataGridAkunKasir.Size = new Size(950, 580);
             dataGridAkunKasir.TabIndex = 16;
+            dataGridAkunKasir.CellContentClick += dataGridAkunKasir_CellContentClick;
+            dataGridAkunKasir.AutoGenerateColumns = false;
+            dataGridAkunKasir.AllowUserToResizeColumns = false;
+            dataGridAkunKasir.AllowUserToResizeRows = false;
             // 
             // ID
             // 
             ID.DataPropertyName = "Id";
-            ID.HeaderText = "Id";
+            ID.HeaderText = "ID";
             ID.MinimumWidth = 6;
             ID.Name = "ID";
             ID.ReadOnly = true;
             ID.Resizable = DataGridViewTriState.False;
-            ID.Width = 40;
+            ID.Width = 50;
             // 
             // Email
             // 
@@ -190,16 +192,7 @@
             Email.Name = "Email";
             Email.ReadOnly = true;
             Email.Resizable = DataGridViewTriState.False;
-            Email.Width = 257;
-            // 
-            // PasswordHash
-            // 
-            PasswordHash.DataPropertyName = "PasswordHash";
-            PasswordHash.HeaderText = "Password";
-            PasswordHash.MinimumWidth = 6;
-            PasswordHash.Name = "PasswordHash";
-            PasswordHash.ReadOnly = true;
-            PasswordHash.Width = 170;
+            Email.Width = 277;
             // 
             // Username
             // 
@@ -208,7 +201,7 @@
             Username.MinimumWidth = 6;
             Username.Name = "Username";
             Username.ReadOnly = true;
-            Username.Width = 160;
+            Username.Width = 210;
             // 
             // NoTelp
             // 
@@ -217,44 +210,41 @@
             NoTelp.MinimumWidth = 6;
             NoTelp.Name = "NoTelp";
             NoTelp.ReadOnly = true;
-            NoTelp.Width = 140;
-            // 
-            // Edit
-            // 
-            Edit.DataPropertyName = "Edit";
-            Edit.HeaderText = "Edit";
-            Edit.MinimumWidth = 6;
-            Edit.Name = "Edit";
-            Edit.ReadOnly = true;
-            Edit.Width = 60;
+            NoTelp.Width = 180;
             // 
             // StatusColumn
             // 
+            StatusColumn.DataPropertyName = "StatusText";
             StatusColumn.HeaderText = "Status";
             StatusColumn.MinimumWidth = 6;
             StatusColumn.Name = "StatusColumn";
             StatusColumn.ReadOnly = true;
-            StatusColumn.Width = 60;
+            StatusColumn.Width = 120;
             // 
             // Toggle
             // 
-            Toggle.DataPropertyName = "Toggle";
             Toggle.HeaderText = "Ubah Status";
             Toggle.MinimumWidth = 6;
             Toggle.Name = "Toggle";
             Toggle.ReadOnly = true;
-            Toggle.Width = 60;
+            Toggle.Text = "Toggle";
+            Toggle.UseColumnTextForButtonValue = true;
+            Toggle.Width = 110;
             // 
             // btnTambahAkunKasir
             // 
-            btnTambahAkunKasir.BackColor = Color.DeepSkyBlue;
+            btnTambahAkunKasir.BackColor = Color.Transparent;
+            btnTambahAkunKasir.BackgroundImage = Properties.Resources.TambahAkun;
+            btnTambahAkunKasir.BackgroundImageLayout = ImageLayout.Zoom;
+            btnTambahAkunKasir.Cursor = Cursors.Hand;
+            btnTambahAkunKasir.FlatAppearance.BorderSize = 0;
+            btnTambahAkunKasir.FlatStyle = FlatStyle.Flat;
             btnTambahAkunKasir.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTambahAkunKasir.ForeColor = SystemColors.ButtonHighlight;
-            btnTambahAkunKasir.Location = new Point(1122, 72);
+            btnTambahAkunKasir.Location = new Point(1073, 61);
             btnTambahAkunKasir.Name = "btnTambahAkunKasir";
-            btnTambahAkunKasir.Size = new Size(111, 36);
+            btnTambahAkunKasir.Size = new Size(160, 30);
             btnTambahAkunKasir.TabIndex = 17;
-            btnTambahAkunKasir.Text = "+ Akun Kasir";
             btnTambahAkunKasir.UseVisualStyleBackColor = false;
             btnTambahAkunKasir.Click += btnTambahAkunKasir_Click;
             // 
@@ -291,14 +281,12 @@
         private Label lblUsername;
         private Label lblEmail;
         private DataGridView dataGridAkunKasir;
+        private Button btnTambahAkunKasir;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Email;
-        private DataGridViewTextBoxColumn PasswordHash;
         private DataGridViewTextBoxColumn Username;
         private DataGridViewTextBoxColumn NoTelp;
-        private DataGridViewButtonColumn Edit;
         private DataGridViewTextBoxColumn StatusColumn;
         private DataGridViewButtonColumn Toggle;
-        private Button btnTambahAkunKasir;
     }
 }

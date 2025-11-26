@@ -83,6 +83,26 @@ namespace FishMart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BgPopupTambahAkun {
+            get {
+                object obj = ResourceManager.GetObject("BgPopupTambahAkun", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BgPopupTambahAkun1 {
+            get {
+                object obj = ResourceManager.GetObject("BgPopupTambahAkun1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bgProduk {
             get {
                 object obj = ResourceManager.GetObject("bgProduk", resourceCulture);
@@ -106,6 +126,16 @@ namespace FishMart.Properties {
         internal static System.Drawing.Bitmap BgRiwayatTransaksiAdmin {
             get {
                 object obj = ResourceManager.GetObject("BgRiwayatTransaksiAdmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BuatAkun {
+            get {
+                object obj = ResourceManager.GetObject("BuatAkun", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +226,16 @@ namespace FishMart.Properties {
         internal static System.Drawing.Bitmap sing_in_hover {
             get {
                 object obj = ResourceManager.GetObject("sing_in_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TambahAkun {
+            get {
+                object obj = ResourceManager.GetObject("TambahAkun", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

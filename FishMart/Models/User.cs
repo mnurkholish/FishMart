@@ -14,5 +14,7 @@ namespace FishMart.Models
         public string Username { get; set; }
         public string NoTelp { get; set; }
         public bool IsAdmin { get; set; }
+        public bool IsActive { get; set; }
+        public string StatusText => IsActive ? "Aktif" : "Nonaktif";
     }
 }

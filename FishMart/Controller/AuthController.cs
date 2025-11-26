@@ -31,12 +31,12 @@ namespace FishMart.Controller
             Form form;
             if (user.IsAdmin)
             {
-                MessageBox.Show("Login Sukses Sebagai Admin", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show("Login Sukses Sebagai Admin", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 form = new V_DashboardAdmin();
             }
             else
             {
-                MessageBox.Show("Login Sukses Sebagai Kasir", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show("Login Sukses Sebagai Kasir", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 form = new V_FormLogin(); // Sementara
             }
 

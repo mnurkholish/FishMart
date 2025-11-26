@@ -37,52 +37,62 @@
             // 
             // tbEmail
             // 
-            tbEmail.Location = new Point(90, 62);
+            tbEmail.BorderStyle = BorderStyle.None;
+            tbEmail.Location = new Point(63, 98);
             tbEmail.Name = "tbEmail";
-            tbEmail.Size = new Size(336, 27);
+            tbEmail.Size = new Size(372, 20);
             tbEmail.TabIndex = 0;
             // 
             // tbPassword
             // 
-            tbPassword.Location = new Point(90, 110);
+            tbPassword.BorderStyle = BorderStyle.None;
+            tbPassword.Location = new Point(63, 360);
             tbPassword.Name = "tbPassword";
-            tbPassword.Size = new Size(336, 27);
+            tbPassword.Size = new Size(372, 20);
             tbPassword.TabIndex = 1;
             // 
             // tbUsername
             // 
-            tbUsername.Location = new Point(90, 167);
+            tbUsername.BorderStyle = BorderStyle.None;
+            tbUsername.Location = new Point(63, 185);
             tbUsername.Name = "tbUsername";
-            tbUsername.Size = new Size(336, 27);
+            tbUsername.Size = new Size(372, 20);
             tbUsername.TabIndex = 2;
             // 
             // tbNoTelp
             // 
-            tbNoTelp.Location = new Point(90, 228);
+            tbNoTelp.BorderStyle = BorderStyle.None;
+            tbNoTelp.Location = new Point(63, 273);
             tbNoTelp.Name = "tbNoTelp";
-            tbNoTelp.Size = new Size(336, 27);
+            tbNoTelp.Size = new Size(372, 20);
             tbNoTelp.TabIndex = 3;
             // 
             // btnBuatAkun
             // 
-            btnBuatAkun.Location = new Point(208, 290);
+            btnBuatAkun.BackColor = Color.Transparent;
+            btnBuatAkun.BackgroundImage = Properties.Resources.BuatAkun;
+            btnBuatAkun.BackgroundImageLayout = ImageLayout.Zoom;
+            btnBuatAkun.FlatAppearance.BorderSize = 0;
+            btnBuatAkun.FlatStyle = FlatStyle.Flat;
+            btnBuatAkun.Location = new Point(160, 428);
             btnBuatAkun.Name = "btnBuatAkun";
-            btnBuatAkun.Size = new Size(94, 29);
+            btnBuatAkun.Size = new Size(179, 38);
             btnBuatAkun.TabIndex = 4;
-            btnBuatAkun.Text = "Buat";
-            btnBuatAkun.UseVisualStyleBackColor = true;
+            btnBuatAkun.UseVisualStyleBackColor = false;
             btnBuatAkun.Click += btnBuatAkun_Click;
             // 
             // PopupTambahAkunKasir
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(622, 423);
+            BackgroundImage = Properties.Resources.BgPopupTambahAkun1;
+            ClientSize = new Size(497, 493);
             Controls.Add(btnBuatAkun);
             Controls.Add(tbNoTelp);
             Controls.Add(tbUsername);
             Controls.Add(tbPassword);
             Controls.Add(tbEmail);
+            DoubleBuffered = true;
             Name = "PopupTambahAkunKasir";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tambah Akun Kasir";
