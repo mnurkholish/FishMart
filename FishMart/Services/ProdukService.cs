@@ -23,7 +23,7 @@ namespace FishMart.Services
         {
             return _repo.GetListProduk(limit);
         }
-        public Produk GetLowStock()
+        public Produk? GetLowStock()
         {
             return _repo.GetLowStock();
         }

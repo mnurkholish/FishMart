@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_DashboardAdmin));
             PanelDisplayProduk = new FlowLayoutPanel();
             lblJumlahTransaksi = new Label();
             lblTotalPenjualanBulanan = new Label();
@@ -237,6 +238,7 @@
             Controls.Add(lblTotalPenjualanBulanan);
             Controls.Add(lblJumlahTransaksi);
             Controls.Add(PanelDisplayProduk);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_DashboardAdmin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FishMart";

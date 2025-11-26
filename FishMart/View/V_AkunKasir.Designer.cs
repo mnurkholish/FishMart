@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_AkunKasir));
             btnDashboard = new Label();
             btnAkunKasir = new Label();
             btnProduk = new Label();
@@ -151,6 +152,8 @@
             // dataGridAkunKasir
             // 
             dataGridAkunKasir.AllowUserToAddRows = false;
+            dataGridAkunKasir.AllowUserToResizeColumns = false;
+            dataGridAkunKasir.AllowUserToResizeRows = false;
             dataGridAkunKasir.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
@@ -170,9 +173,6 @@
             dataGridAkunKasir.Size = new Size(950, 580);
             dataGridAkunKasir.TabIndex = 16;
             dataGridAkunKasir.CellContentClick += dataGridAkunKasir_CellContentClick;
-            dataGridAkunKasir.AutoGenerateColumns = false;
-            dataGridAkunKasir.AllowUserToResizeColumns = false;
-            dataGridAkunKasir.AllowUserToResizeRows = false;
             // 
             // ID
             // 
@@ -263,6 +263,7 @@
             Controls.Add(btnProduk);
             Controls.Add(btnAkunKasir);
             Controls.Add(btnDashboard);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_AkunKasir";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FishMart";

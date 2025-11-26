@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_RiwayatTransaksi));
             btnDashboard = new Label();
             btnAkunKasir = new Label();
             btnProduk = new Label();
@@ -151,6 +152,7 @@
             Controls.Add(btnProduk);
             Controls.Add(btnAkunKasir);
             Controls.Add(btnDashboard);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_RiwayatTransaksi";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FishMart";

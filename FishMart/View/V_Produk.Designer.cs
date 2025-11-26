@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Produk));
             btnDashboard = new Label();
             btnAkunKasir = new Label();
             btnProduk = new Label();
@@ -141,12 +142,12 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.Transparent;
             flowLayoutPanel1.Location = new Point(284, 91);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(960, 600);
             flowLayoutPanel1.TabIndex = 16;
-            flowLayoutPanel1.AutoScroll = true;
             // 
             // V_Produk
             // 
@@ -162,6 +163,7 @@
             Controls.Add(btnProduk);
             Controls.Add(btnAkunKasir);
             Controls.Add(btnDashboard);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_Produk";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FishMart";

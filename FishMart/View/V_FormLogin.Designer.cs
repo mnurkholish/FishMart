@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_FormLogin));
             pictureBox1 = new PictureBox();
             npgsqlCommandBuilder1 = new Npgsql.NpgsqlCommandBuilder();
             tbEmailLogin = new TextBox();
@@ -105,6 +106,7 @@
             Controls.Add(btnLogin);
             Controls.Add(tbPasswordLogin);
             Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FishMart";
