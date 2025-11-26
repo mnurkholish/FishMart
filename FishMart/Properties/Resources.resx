@@ -136,9 +136,6 @@
   <data name="bgProduk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg-profit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BgProdukAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BgProdukAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="plus_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -162,5 +159,11 @@
   </data>
   <data name="BgRiwayatTransaksiAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BgRiwayatTransaksiAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTambahProduk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnTambahProduk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BgProdukAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bgprodukterbaru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

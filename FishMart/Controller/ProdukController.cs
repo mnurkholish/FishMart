@@ -27,5 +27,20 @@ namespace FishMart.Controller
         {
             return _produkService.GetLowStock();
         }
+        public void InsertProduk(Produk p)
+        {
+            _produkService.InsertProduk(p);
+        }
+
+        public void UpdateProduk(Produk p)
+        {
+            _produkService.UpdateProduk(p);
+        }
+
+        public void DeleteProduk(int id)
+        {
+            _produkService.DeleteProduk(id);
+        }
+
     }
 }

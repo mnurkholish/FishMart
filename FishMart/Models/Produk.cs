@@ -13,5 +13,6 @@ namespace FishMart.Models
         public int Harga { get; set; }
         public int Stok { get; set; }
         public byte[] GambarProduk { get; set; }
+        public bool IsDelete { get; set; }
     }
 }

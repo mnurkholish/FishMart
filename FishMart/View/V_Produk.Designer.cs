@@ -36,6 +36,7 @@
             lblUsername = new Label();
             lblEmail = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            BtnTambahProduk = new Button();
             SuspendLayout();
             // 
             // btnDashboard
@@ -103,11 +104,11 @@
             btnLogout.AutoSize = true;
             btnLogout.BackColor = Color.Transparent;
             btnLogout.Cursor = Cursors.Hand;
-            btnLogout.Font = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogout.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogout.ForeColor = Color.Gray;
             btnLogout.Location = new Point(58, 608);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(71, 26);
+            btnLogout.Size = new Size(60, 18);
             btnLogout.TabIndex = 13;
             btnLogout.Text = "Logout";
             btnLogout.TextAlign = ContentAlignment.BottomLeft;
@@ -141,12 +142,26 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.BackColor = Color.Transparent;
-            flowLayoutPanel1.Location = new Point(284, 91);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(960, 600);
-            flowLayoutPanel1.TabIndex = 16;
             flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.BackColor = Color.Transparent;
+            flowLayoutPanel1.Location = new Point(284, 162);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(960, 529);
+            flowLayoutPanel1.TabIndex = 16;
+            // 
+            // BtnTambahProduk
+            // 
+            BtnTambahProduk.BackColor = Color.Transparent;
+            BtnTambahProduk.BackgroundImage = Properties.Resources.btnTambahProduk;
+            BtnTambahProduk.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnTambahProduk.FlatAppearance.BorderSize = 0;
+            BtnTambahProduk.FlatStyle = FlatStyle.Flat;
+            BtnTambahProduk.Location = new Point(1084, 32);
+            BtnTambahProduk.Name = "BtnTambahProduk";
+            BtnTambahProduk.Size = new Size(160, 30);
+            BtnTambahProduk.TabIndex = 17;
+            BtnTambahProduk.UseVisualStyleBackColor = false;
+            BtnTambahProduk.Click += BtnTambahProduk_Click;
             // 
             // V_Produk
             // 
@@ -154,6 +169,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.BgProdukAdmin;
             ClientSize = new Size(1280, 720);
+            Controls.Add(BtnTambahProduk);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(lblEmail);
             Controls.Add(lblUsername);
@@ -179,5 +195,6 @@
         private Label lblUsername;
         private Label lblEmail;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Button BtnTambahProduk;
     }
 }

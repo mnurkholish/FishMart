@@ -27,5 +27,17 @@ namespace FishMart.Services
         {
             return _repo.GetLowStock();
         }
+        public void InsertProduk(Produk produk)
+        {
+            _repo.InsertProduk(produk);
+        }
+        public void UpdateProduk(Produk produk)
+        {
+            _repo.UpdateProduk(produk);
+        }
+        public void DeleteProduk(int produkId)
+        {
+            _repo.DeleteProduk(produkId);
+        }
     }
 }
