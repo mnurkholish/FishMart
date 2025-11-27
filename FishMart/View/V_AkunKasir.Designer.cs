@@ -55,9 +55,9 @@
             btnDashboard.Cursor = Cursors.Hand;
             btnDashboard.Font = new Font("Poppins", 9F);
             btnDashboard.ForeColor = SystemColors.ControlText;
-            btnDashboard.Location = new Point(58, 114);
+            btnDashboard.Location = new Point(51, 86);
             btnDashboard.Name = "btnDashboard";
-            btnDashboard.Size = new Size(97, 26);
+            btnDashboard.Size = new Size(76, 21);
             btnDashboard.TabIndex = 9;
             btnDashboard.Text = "Dashboard";
             btnDashboard.TextAlign = ContentAlignment.BottomLeft;
@@ -70,9 +70,9 @@
             btnAkunKasir.Cursor = Cursors.Hand;
             btnAkunKasir.Font = new Font("Poppins", 9F);
             btnAkunKasir.ForeColor = SystemColors.ControlText;
-            btnAkunKasir.Location = new Point(58, 255);
+            btnAkunKasir.Location = new Point(51, 191);
             btnAkunKasir.Name = "btnAkunKasir";
-            btnAkunKasir.Size = new Size(91, 26);
+            btnAkunKasir.Size = new Size(71, 21);
             btnAkunKasir.TabIndex = 10;
             btnAkunKasir.Text = "Akun Kasir";
             btnAkunKasir.TextAlign = ContentAlignment.BottomLeft;
@@ -85,9 +85,9 @@
             btnProduk.Cursor = Cursors.Hand;
             btnProduk.Font = new Font("Poppins", 9F);
             btnProduk.ForeColor = SystemColors.ControlText;
-            btnProduk.Location = new Point(58, 162);
+            btnProduk.Location = new Point(51, 122);
             btnProduk.Name = "btnProduk";
-            btnProduk.Size = new Size(65, 26);
+            btnProduk.Size = new Size(51, 21);
             btnProduk.TabIndex = 11;
             btnProduk.Text = "Produk";
             btnProduk.TextAlign = ContentAlignment.BottomLeft;
@@ -100,9 +100,9 @@
             btnRiwayatTransaksi.Cursor = Cursors.Hand;
             btnRiwayatTransaksi.Font = new Font("Poppins", 9F);
             btnRiwayatTransaksi.ForeColor = SystemColors.ControlText;
-            btnRiwayatTransaksi.Location = new Point(58, 208);
+            btnRiwayatTransaksi.Location = new Point(51, 156);
             btnRiwayatTransaksi.Name = "btnRiwayatTransaksi";
-            btnRiwayatTransaksi.Size = new Size(146, 26);
+            btnRiwayatTransaksi.Size = new Size(115, 21);
             btnRiwayatTransaksi.TabIndex = 12;
             btnRiwayatTransaksi.Text = "Riwayat Transaksi";
             btnRiwayatTransaksi.TextAlign = ContentAlignment.BottomLeft;
@@ -115,9 +115,9 @@
             btnLogout.Cursor = Cursors.Hand;
             btnLogout.Font = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogout.ForeColor = Color.Gray;
-            btnLogout.Location = new Point(58, 608);
+            btnLogout.Location = new Point(51, 456);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(71, 26);
+            btnLogout.Size = new Size(53, 21);
             btnLogout.TabIndex = 13;
             btnLogout.Text = "Logout";
             btnLogout.TextAlign = ContentAlignment.BottomLeft;
@@ -129,9 +129,9 @@
             lblUsername.BackColor = Color.Transparent;
             lblUsername.Font = new Font("Poppins", 9F);
             lblUsername.ForeColor = SystemColors.ControlText;
-            lblUsername.Location = new Point(77, 652);
+            lblUsername.Location = new Point(67, 489);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(89, 26);
+            lblUsername.Size = new Size(70, 21);
             lblUsername.TabIndex = 14;
             lblUsername.Text = "Username";
             lblUsername.TextAlign = ContentAlignment.BottomLeft;
@@ -142,9 +142,9 @@
             lblEmail.BackColor = Color.Transparent;
             lblEmail.Font = new Font("Poppins", 7F);
             lblEmail.ForeColor = SystemColors.ControlDarkDark;
-            lblEmail.Location = new Point(78, 670);
+            lblEmail.Location = new Point(68, 502);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(118, 22);
+            lblEmail.Size = new Size(96, 18);
             lblEmail.TabIndex = 15;
             lblEmail.Text = "Email@gmail.com";
             lblEmail.TextAlign = ContentAlignment.BottomLeft;
@@ -154,7 +154,6 @@
             dataGridAkunKasir.AllowUserToAddRows = false;
             dataGridAkunKasir.AllowUserToResizeColumns = false;
             dataGridAkunKasir.AllowUserToResizeRows = false;
-            dataGridAkunKasir.AutoGenerateColumns = false;
             dataGridAkunKasir.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
@@ -166,12 +165,13 @@
             dataGridAkunKasir.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridAkunKasir.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridAkunKasir.Columns.AddRange(new DataGridViewColumn[] { ID, Email, Username, NoTelp, StatusColumn, Toggle });
-            dataGridAkunKasir.Location = new Point(283, 114);
+            dataGridAkunKasir.Location = new Point(248, 86);
+            dataGridAkunKasir.Margin = new Padding(3, 2, 3, 2);
             dataGridAkunKasir.Name = "dataGridAkunKasir";
             dataGridAkunKasir.ReadOnly = true;
             dataGridAkunKasir.RowHeadersVisible = false;
             dataGridAkunKasir.RowHeadersWidth = 51;
-            dataGridAkunKasir.Size = new Size(950, 580);
+            dataGridAkunKasir.Size = new Size(831, 435);
             dataGridAkunKasir.TabIndex = 16;
             dataGridAkunKasir.CellContentClick += dataGridAkunKasir_CellContentClick;
             // 
@@ -242,19 +242,20 @@
             btnTambahAkunKasir.FlatStyle = FlatStyle.Flat;
             btnTambahAkunKasir.Font = new Font("Poppins", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTambahAkunKasir.ForeColor = SystemColors.ButtonHighlight;
-            btnTambahAkunKasir.Location = new Point(1073, 61);
+            btnTambahAkunKasir.Location = new Point(939, 46);
+            btnTambahAkunKasir.Margin = new Padding(3, 2, 3, 2);
             btnTambahAkunKasir.Name = "btnTambahAkunKasir";
-            btnTambahAkunKasir.Size = new Size(160, 30);
+            btnTambahAkunKasir.Size = new Size(140, 22);
             btnTambahAkunKasir.TabIndex = 17;
             btnTambahAkunKasir.UseVisualStyleBackColor = false;
             btnTambahAkunKasir.Click += btnTambahAkunKasir_Click;
             // 
             // V_AkunKasir
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.BgAkunKasirAdmin;
-            ClientSize = new Size(1280, 720);
+            ClientSize = new Size(1120, 540);
             Controls.Add(btnTambahAkunKasir);
             Controls.Add(dataGridAkunKasir);
             Controls.Add(lblEmail);
@@ -265,6 +266,7 @@
             Controls.Add(btnAkunKasir);
             Controls.Add(btnDashboard);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "V_AkunKasir";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FishMart";
