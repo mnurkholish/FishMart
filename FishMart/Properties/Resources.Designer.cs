@@ -133,9 +133,9 @@ namespace FishMart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BuatAkun {
+        internal static System.Drawing.Bitmap btnTambahProduk {
             get {
-                object obj = ResourceManager.GetObject("BuatAkun", resourceCulture);
+                object obj = ResourceManager.GetObject("btnTambahProduk", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace FishMart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btnTambahProduk {
+        internal static System.Drawing.Bitmap BuatAkun {
             get {
-                object obj = ResourceManager.GetObject("btnTambahProduk", resourceCulture);
+                object obj = ResourceManager.GetObject("BuatAkun", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -154,6 +154,7 @@
             dataGridAkunKasir.AllowUserToAddRows = false;
             dataGridAkunKasir.AllowUserToResizeColumns = false;
             dataGridAkunKasir.AllowUserToResizeRows = false;
+            dataGridAkunKasir.AutoGenerateColumns = false;
             dataGridAkunKasir.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
