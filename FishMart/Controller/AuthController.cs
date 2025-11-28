@@ -37,7 +37,7 @@ namespace FishMart.Controller
             else
             {
                 MessageBox.Show("Login Sukses Sebagai Kasir", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                form = new V_FormLogin(); // Sementara
+                form = new V_Transaksi();
             }
 
             form.Show();

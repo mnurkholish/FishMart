@@ -1,4 +1,6 @@
-﻿namespace FishMart.View
+﻿using System.Windows.Forms;
+
+namespace FishMart.View
 {
     partial class V_AkunKasir
     {
@@ -44,6 +46,7 @@
             NoTelp = new DataGridViewTextBoxColumn();
             StatusColumn = new DataGridViewTextBoxColumn();
             Toggle = new DataGridViewButtonColumn();
+            Edit = new DataGridViewButtonColumn();
             btnTambahAkunKasir = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridAkunKasir).BeginInit();
             SuspendLayout();
@@ -154,7 +157,6 @@
             dataGridAkunKasir.AllowUserToAddRows = false;
             dataGridAkunKasir.AllowUserToResizeColumns = false;
             dataGridAkunKasir.AllowUserToResizeRows = false;
-            dataGridAkunKasir.AutoGenerateColumns = false;
             dataGridAkunKasir.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
@@ -165,7 +167,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridAkunKasir.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridAkunKasir.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridAkunKasir.Columns.AddRange(new DataGridViewColumn[] { ID, Email, Username, NoTelp, StatusColumn, Toggle });
+            dataGridAkunKasir.Columns.AddRange(new DataGridViewColumn[] { ID, Email, Username, NoTelp, StatusColumn, Toggle, Edit });
             dataGridAkunKasir.Location = new Point(283, 114);
             dataGridAkunKasir.Name = "dataGridAkunKasir";
             dataGridAkunKasir.ReadOnly = true;
@@ -193,7 +195,7 @@
             Email.Name = "Email";
             Email.ReadOnly = true;
             Email.Resizable = DataGridViewTriState.False;
-            Email.Width = 277;
+            Email.Width = 237;
             // 
             // Username
             // 
@@ -202,7 +204,8 @@
             Username.MinimumWidth = 6;
             Username.Name = "Username";
             Username.ReadOnly = true;
-            Username.Width = 210;
+            Username.Resizable = DataGridViewTriState.False;
+            Username.Width = 170;
             // 
             // NoTelp
             // 
@@ -211,6 +214,7 @@
             NoTelp.MinimumWidth = 6;
             NoTelp.Name = "NoTelp";
             NoTelp.ReadOnly = true;
+            NoTelp.Resizable = DataGridViewTriState.False;
             NoTelp.Width = 180;
             // 
             // StatusColumn
@@ -220,6 +224,7 @@
             StatusColumn.MinimumWidth = 6;
             StatusColumn.Name = "StatusColumn";
             StatusColumn.ReadOnly = true;
+            StatusColumn.Resizable = DataGridViewTriState.False;
             StatusColumn.Width = 120;
             // 
             // Toggle
@@ -228,9 +233,21 @@
             Toggle.MinimumWidth = 6;
             Toggle.Name = "Toggle";
             Toggle.ReadOnly = true;
+            Toggle.Resizable = DataGridViewTriState.False;
             Toggle.Text = "Toggle";
             Toggle.UseColumnTextForButtonValue = true;
             Toggle.Width = 110;
+            // 
+            // Edit
+            // 
+            Edit.HeaderText = "Edit";
+            Edit.MinimumWidth = 6;
+            Edit.Name = "Edit";
+            Edit.ReadOnly = true;
+            Edit.Resizable = DataGridViewTriState.False;
+            Edit.Text = "Edit";
+            Edit.UseColumnTextForButtonValue = true;
+            Edit.Width = 80;
             // 
             // btnTambahAkunKasir
             // 
@@ -290,5 +307,6 @@
         private DataGridViewTextBoxColumn NoTelp;
         private DataGridViewTextBoxColumn StatusColumn;
         private DataGridViewButtonColumn Toggle;
+        private DataGridViewButtonColumn Edit;
     }
 }

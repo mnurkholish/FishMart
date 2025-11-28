@@ -123,6 +123,16 @@ namespace FishMart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BgProdukKasir {
+            get {
+                object obj = ResourceManager.GetObject("BgProdukKasir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BgRiwayatTransaksiAdmin {
             get {
                 object obj = ResourceManager.GetObject("BgRiwayatTransaksiAdmin", resourceCulture);
@@ -136,6 +146,16 @@ namespace FishMart.Properties {
         internal static System.Drawing.Bitmap btnTambahProduk {
             get {
                 object obj = ResourceManager.GetObject("btnTambahProduk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnToggle {
+            get {
+                object obj = ResourceManager.GetObject("btnToggle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
