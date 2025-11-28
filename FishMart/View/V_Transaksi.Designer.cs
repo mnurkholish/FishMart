@@ -64,11 +64,14 @@
             // 
             // btnCheckout
             // 
-            btnCheckout.Location = new Point(962, 653);
+            btnCheckout.BackgroundImage = Properties.Resources.btnLanjutkanTransaksi;
+            btnCheckout.BackgroundImageLayout = ImageLayout.Zoom;
+            btnCheckout.FlatAppearance.BorderSize = 0;
+            btnCheckout.FlatStyle = FlatStyle.Flat;
+            btnCheckout.Location = new Point(896, 649);
             btnCheckout.Name = "btnCheckout";
-            btnCheckout.Size = new Size(94, 29);
+            btnCheckout.Size = new Size(360, 38);
             btnCheckout.TabIndex = 3;
-            btnCheckout.Text = "button1";
             btnCheckout.UseVisualStyleBackColor = true;
             btnCheckout.Click += btnCheckout_Click;
             // 
