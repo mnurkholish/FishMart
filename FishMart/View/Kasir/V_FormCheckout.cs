@@ -49,6 +49,18 @@ namespace FishMart.View.Kasir
 
             // Simpan transaksi
             int idTransaksi = _controller.SimpanTransaksi(_transaksi, _details);
+
+            if (idTransaksi < 0)
+            {
+                MessageBox.Show("Teradi kesalahan. Transaksi tidak tercatat.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Transaksi berhasil disimpan", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            //var nota = new V_Nota(_transaksi, _details, bayar);
+            //nota.ShowDialog();
         }
     }
 }

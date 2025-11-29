@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_FormCheckout));
             lblTotal = new Label();
             tbUangBayar = new TextBox();
             btnBayar = new Button();
@@ -36,7 +37,7 @@
             // 
             // lblTotal
             // 
-            lblTotal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblTotal.Anchor = AnchorStyles.Right;
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTotal.Location = new Point(386, 81);
@@ -44,6 +45,7 @@
             lblTotal.Size = new Size(65, 36);
             lblTotal.TabIndex = 0;
             lblTotal.Text = "Total";
+            lblTotal.TextAlign = ContentAlignment.TopRight;
             // 
             // tbUangBayar
             // 
@@ -71,7 +73,7 @@
             // 
             // lblKembalian
             // 
-            lblKembalian.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblKembalian.Anchor = AnchorStyles.Right;
             lblKembalian.AutoSize = true;
             lblKembalian.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblKembalian.Location = new Point(425, 239);
@@ -79,6 +81,7 @@
             lblKembalian.Size = new Size(26, 36);
             lblKembalian.TabIndex = 4;
             lblKembalian.Text = "-";
+            lblKembalian.TextAlign = ContentAlignment.TopRight;
             // 
             // V_FormCheckout
             // 
@@ -90,8 +93,10 @@
             Controls.Add(btnBayar);
             Controls.Add(tbUangBayar);
             Controls.Add(lblTotal);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_FormCheckout";
-            Text = "V_FormCheckout";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "CheckOut";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Transaksi));
             btnTKasir = new Label();
             btnRTKasir = new Label();
             btnProdukKasir = new Label();
@@ -185,9 +186,10 @@
             Controls.Add(btnProdukKasir);
             Controls.Add(btnRTKasir);
             Controls.Add(btnTKasir);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_Transaksi";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Sidebar";
+            Text = "FishMart";
             Load += V_Transaksi_Load;
             ResumeLayout(false);
             PerformLayout();
