@@ -36,7 +36,8 @@
             lblEmail = new Label();
             PanelDisplayProduk = new FlowLayoutPanel();
             PanelCart = new FlowLayoutPanel();
-            label1 = new Label();
+            lblTotalHarga = new Label();
+            btnCheckout = new Button();
             SuspendLayout();
             // 
             // btnTKasir
@@ -141,17 +142,32 @@
             PanelCart.Size = new Size(377, 511);
             PanelCart.TabIndex = 17;
             // 
-            // label1
+            // lblTotalHarga
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Poppins Medium", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1159, 597);
-            label1.Name = "label1";
-            label1.Size = new Size(97, 44);
-            label1.TabIndex = 18;
-            label1.Text = "label1";
-            label1.TextAlign = ContentAlignment.TopRight
+            lblTotalHarga.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblTotalHarga.AutoSize = true;
+            lblTotalHarga.BackColor = Color.Transparent;
+            lblTotalHarga.Font = new Font("Poppins Medium", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalHarga.Location = new Point(1090, 601);
+            lblTotalHarga.Name = "lblTotalHarga";
+            lblTotalHarga.RightToLeft = RightToLeft.Yes;
+            lblTotalHarga.Size = new Size(178, 44);
+            lblTotalHarga.TabIndex = 18;
+            lblTotalHarga.Text = "Total Harga";
+            // 
+            // btnCheckout
+            // 
+            btnCheckout.BackColor = Color.Transparent;
+            btnCheckout.BackgroundImage = Properties.Resources.btnCheckout;
+            btnCheckout.BackgroundImageLayout = ImageLayout.Zoom;
+            btnCheckout.FlatAppearance.BorderSize = 0;
+            btnCheckout.FlatStyle = FlatStyle.Flat;
+            btnCheckout.Location = new Point(895, 648);
+            btnCheckout.Name = "btnCheckout";
+            btnCheckout.Size = new Size(362, 40);
+            btnCheckout.TabIndex = 19;
+            btnCheckout.UseVisualStyleBackColor = false;
+            btnCheckout.Click += btnCheckout_Click;
             // 
             // V_Transaksi
             // 
@@ -159,7 +175,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.BgTransaksi;
             ClientSize = new Size(1280, 720);
-            Controls.Add(label1);
+            Controls.Add(btnCheckout);
+            Controls.Add(lblTotalHarga);
             Controls.Add(PanelCart);
             Controls.Add(PanelDisplayProduk);
             Controls.Add(lblEmail);
@@ -185,6 +202,7 @@
         private Label lblEmail;
         private FlowLayoutPanel PanelDisplayProduk;
         private FlowLayoutPanel PanelCart;
-        private Label label1;
+        private Label lblTotalHarga;
+        private Button btnCheckout;
     }
 }
