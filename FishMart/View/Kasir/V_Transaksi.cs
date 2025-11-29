@@ -2,6 +2,7 @@
 using FishMart.Models;
 using FishMart.Session;
 using FishMart.Utils;
+using FishMart.View.Kasir;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace FishMart.View
     {
         private readonly AuthController _authController;
         private readonly ProdukController _produkController;
+        private readonly TransaksiController _transaksiController;
         private List<Panel> cartItems = new List<Panel>();
         private Dictionary<int, int> cartQuantities = new Dictionary<int, int>();
         private Dictionary<int, Panel> cartPanelsById = new Dictionary<int, Panel>();
@@ -28,6 +30,7 @@ namespace FishMart.View
             InitializeComponent();
             _authController = new AuthController();
             _produkController = new ProdukController();
+            _transaksiController = new TransaksiController();
         }
 
         private void V_Transaksi_Load(object sender, EventArgs e)
@@ -421,6 +424,51 @@ namespace FishMart.View
             lblTotalHarga.Text = "Rp " + total.ToString("N0");
         }
 
+        private List<DetailTransaksi> BuildDetailTransaksiList()
+        {
+            List<DetailTransaksi> list = new List<DetailTransaksi>();
+
+            foreach (var kv in cartPanelsById)
+            {
+                int produkId = kv.Key;
+                Panel panel = kv.Value;
+
+                if (panel.Tag is Produk p)
+                {
+                    int qty = cartQuantities[produkId];
+                    list.Add(new DetailTransaksi
+                    {
+                        ProdukId = produkId,
+                        Qty = qty,
+                        HargaSatuan = p.Harga,
+                        Subtotal = qty * p.Harga
+                    });
+                }
+            }
+
+            return list;
+        }
+
+        private Transaksi BuildTransaksi()
+        {
+            long total = 0;
+            foreach (var kv in cartQuantities)
+            {
+                int pid = kv.Key;
+                int qty = kv.Value;
+
+                Produk p = _produkController.GetListProduk().First(pr => pr.Id == pid);
+                total += p.Harga * qty;
+            }
+
+            return new Transaksi
+            {
+                UserId = UserSession.Id,
+                TotalHarga = (int)total,
+                Tanggal = DateTime.Now
+            };
+        }
+
         private void btnCheckout_Click(object sender, EventArgs e)
         {
             if (cartPanelsById.Count == 0)
@@ -429,31 +477,27 @@ namespace FishMart.View
                 return;
             }
 
-            // Contoh sederhana: tampilkan total dan minta konfirmasi.
+
             var result = MessageBox.Show($"Total: {lblTotalHarga.Text}\nLanjutkan transaksi?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                // TODO: panggil transaksi controller / simpan transaksi ke DB.
-                // contoh pseudocode (sesuaikan dengan implementasimu):
-                /*
-                    var transaksi = new Transaksi { TanggalTransaksi = DateTime.Now, TotalHarga = total, Detail = ... }
-                    transaksiController.SimpanTransaksi(transaksi);
-                    // kemudian update stok via produkController.UpdateStock(...)
-                 */
+            if (result != DialogResult.Yes)
+                return;
 
-                MessageBox.Show("Transaksi disimpan (stub). Stok dan penyimpanan belum diimplementasikan di contoh ini.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Transaksi transaksi = BuildTransaksi();
+            List<DetailTransaksi> details = BuildDetailTransaksiList();
 
-                // Clear keranjang UI & data
-                PanelCart.Controls.Clear();
-                cartItems.Clear();
-                cartPanelsById.Clear();
-                cartQuantities.Clear();
-                RecalculateTotal();
+            var formCheckout = new V_FormCheckout(transaksi, details);
+            formCheckout.ShowDialog();
 
-                // reload produk agar stok ter-update jika kamu implementasikan update stok
-                var produks = _produkController.GetListProduk().OrderBy(p => p.Id).ToList();
-                GenerateProductCards(produks);
-            }
+            // Clear keranjang UI & data
+            PanelCart.Controls.Clear();
+            cartItems.Clear();
+            cartPanelsById.Clear();
+            cartQuantities.Clear();
+            RecalculateTotal();
+
+            // reload produk agar stok ter-update jika kamu implementasikan update stok
+            var produks = _produkController.GetListProduk().OrderBy(p => p.Id).ToList();
+            GenerateProductCards(produks);
         }
 
         private void btnTKasir_Click(object sender, EventArgs e)
