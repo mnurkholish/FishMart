@@ -122,11 +122,11 @@
             lblEmail.Text = "Email@gmail.com";
             lblEmail.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // V_ProdukKasir
+            // V_Transaksi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.BgProdukKasir;
+            BackgroundImage = Properties.Resources.BgTransaksi;
             ClientSize = new Size(1280, 720);
             Controls.Add(lblEmail);
             Controls.Add(lblUsername);
@@ -134,7 +134,7 @@
             Controls.Add(btnProdukKasir);
             Controls.Add(btnRTKasir);
             Controls.Add(btnTKasir);
-            Name = "V_ProdukKasir";
+            Name = "V_Transaksi";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sidebar";
             Load += V_Transaksi_Load;

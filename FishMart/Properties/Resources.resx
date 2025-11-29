@@ -133,11 +133,8 @@
   <data name="sing_in_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sing in buttonn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TambahAkun" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TambahAkun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnToggle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnToggle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="login_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,11 +142,14 @@
   <data name="bgProduk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg-profit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BgAkunKasirAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BgAkunKasirAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BgProdukAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bgprodukterbaru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BuatAkun" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BuatAkun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnToggle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnToggle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="plus_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,11 +163,14 @@
   <data name="BgPopupTambahAkun1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BgPopupTambahAkun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="login_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TambahAkun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TambahAkun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BgAkunKasirAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BgAkunKasirAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BgProdukKasir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BgProdukKasir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BuatAkun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BuatAkun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EyesClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EyesClose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,7 +184,7 @@
   <data name="sing_in" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sing in button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BgProdukKasir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BgProdukKasir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BgTransaksi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BgTransaksi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
