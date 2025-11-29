@@ -34,6 +34,7 @@
             btnLogout = new Label();
             lblUsername = new Label();
             lblEmail = new Label();
+            PanelDisplayProduk = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // btnTKasir
@@ -122,12 +123,21 @@
             lblEmail.Text = "Email@gmail.com";
             lblEmail.TextAlign = ContentAlignment.BottomLeft;
             // 
+            // PanelDisplayProduk
+            // 
+            PanelDisplayProduk.BackColor = Color.Transparent;
+            PanelDisplayProduk.Location = new Point(267, 77);
+            PanelDisplayProduk.Name = "PanelDisplayProduk";
+            PanelDisplayProduk.Size = new Size(581, 601);
+            PanelDisplayProduk.TabIndex = 16;
+            // 
             // V_Transaksi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.BgTransaksi;
             ClientSize = new Size(1280, 720);
+            Controls.Add(PanelDisplayProduk);
             Controls.Add(lblEmail);
             Controls.Add(lblUsername);
             Controls.Add(btnLogout);
@@ -149,5 +159,6 @@
         private Label btnLogout;
         private Label lblUsername;
         private Label lblEmail;
+        private FlowLayoutPanel PanelDisplayProduk;
     }
 }
