@@ -73,6 +73,16 @@ namespace FishMart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bgDaftarTransaksi {
+            get {
+                object obj = ResourceManager.GetObject("bgDaftarTransaksi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BgDashboardAdmin {
             get {
                 object obj = ResourceManager.GetObject("BgDashboardAdmin", resourceCulture);
