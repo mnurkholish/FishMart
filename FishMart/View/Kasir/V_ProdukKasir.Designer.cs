@@ -35,6 +35,7 @@
             btnLogout = new Label();
             lblUsername = new Label();
             lblEmail = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // btnTKasir
@@ -87,11 +88,11 @@
             btnLogout.AutoSize = true;
             btnLogout.BackColor = Color.Transparent;
             btnLogout.Cursor = Cursors.Hand;
-            btnLogout.Font = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogout.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogout.ForeColor = Color.Gray;
             btnLogout.Location = new Point(58, 608);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(71, 26);
+            btnLogout.Size = new Size(60, 18);
             btnLogout.TabIndex = 13;
             btnLogout.Text = "Logout";
             btnLogout.TextAlign = ContentAlignment.BottomLeft;
@@ -123,12 +124,21 @@
             lblEmail.Text = "Email@gmail.com";
             lblEmail.TextAlign = ContentAlignment.BottomLeft;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Location = new Point(278, 154);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(990, 554);
+            flowLayoutPanel1.TabIndex = 16;
+            // 
             // V_ProdukKasir
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.BgProdukKasir;
             ClientSize = new Size(1280, 720);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(lblEmail);
             Controls.Add(lblUsername);
             Controls.Add(btnLogout);
@@ -151,5 +161,6 @@
         private Label btnLogout;
         private Label lblUsername;
         private Label lblEmail;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
