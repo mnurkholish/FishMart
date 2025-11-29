@@ -35,6 +35,7 @@
             lblUsername = new Label();
             lblEmail = new Label();
             PanelDisplayProduk = new FlowLayoutPanel();
+            PanelCart = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // btnTKasir
@@ -131,12 +132,21 @@
             PanelDisplayProduk.Size = new Size(581, 601);
             PanelDisplayProduk.TabIndex = 16;
             // 
+            // PanelCart
+            // 
+            PanelCart.BackColor = Color.Transparent;
+            PanelCart.Location = new Point(891, 77);
+            PanelCart.Name = "PanelCart";
+            PanelCart.Size = new Size(377, 511);
+            PanelCart.TabIndex = 17;
+            // 
             // V_Transaksi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.BgTransaksi;
             ClientSize = new Size(1280, 720);
+            Controls.Add(PanelCart);
             Controls.Add(PanelDisplayProduk);
             Controls.Add(lblEmail);
             Controls.Add(lblUsername);
@@ -160,5 +170,6 @@
         private Label lblUsername;
         private Label lblEmail;
         private FlowLayoutPanel PanelDisplayProduk;
+        private FlowLayoutPanel PanelCart;
     }
 }
