@@ -145,5 +145,36 @@ namespace FishMart.Repositories
             using var cmd = new NpgsqlCommand(sql, conn);
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
+
+        public List<Transaksi> GetRiwayatByKasir(int userId)
+        {
+            var list = new List<Transaksi>();
+
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            string sql = @"
+                        SELECT id, tanggal, total_harga
+                        FROM transaksi
+                        WHERE user_id = @uid
+                        ORDER BY tanggal DESC
+                        ";
+
+            using var cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@uid", userId);
+
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(new Transaksi
+                {
+                    Id = reader.GetInt32(0),
+                    Tanggal = reader.GetDateTime(1),
+                    TotalHarga = reader.GetInt32(2)
+                });
+            }
+
+            return list;
+        }
     }
 }

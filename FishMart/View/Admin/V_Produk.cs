@@ -43,7 +43,7 @@ namespace FishMart.View
             {
                 Panel card = new Panel
                 {
-                    Size = new Size(930, 90),
+                    Size = new Size(973, 90),
                     BackgroundImage = Properties.Resources.bgProduk,
                     BackgroundImageLayout = ImageLayout.Stretch,
                     Margin = new Padding(2)
@@ -95,9 +95,10 @@ namespace FishMart.View
                     Text = produk.Stok.ToString(),
                     Font = new Font("Poppins", 10, FontStyle.Regular),
                     Size = new Size(60, 35),
-                    Location = new Point(offsetX + 400, offsetY + 18),
+                    Location = new Point(offsetX + 413, offsetY + 18),
                     TextAlign = HorizontalAlignment.Center
                 };
+
                 tbJumlah.KeyDown += (s, e) =>
                 {
                     if (e.KeyCode == Keys.Enter)
@@ -132,7 +133,7 @@ namespace FishMart.View
                     BackgroundImageLayout = ImageLayout.Stretch,
                     Font = new Font("Poppins", 16, FontStyle.Bold),
                     Size = new Size(35, 35),
-                    Location = new Point(offsetX + 360, offsetY + 18),
+                    Location = new Point(offsetX + 373, offsetY + 18),
                     BackColor = Color.FromArgb(230, 230, 230)
                 };
                 btnMinus.Click += (s, e) =>
@@ -153,7 +154,7 @@ namespace FishMart.View
                     BackgroundImageLayout = ImageLayout.Stretch,
                     Font = new Font("Poppins", 16, FontStyle.Bold),
                     Size = new Size(35, 35),
-                    Location = new Point(offsetX + 465, offsetY + 18),
+                    Location = new Point(offsetX + 478, offsetY + 18),
                     BackColor = Color.FromArgb(230, 230, 230)
                 };
                 btnPlus.Click += (s, e) =>
@@ -174,7 +175,7 @@ namespace FishMart.View
                     BackgroundImageLayout = ImageLayout.Zoom,
                     Font = new Font("Poppins", 11, FontStyle.Bold),
                     Size = new Size(90, 40),
-                    Location = new Point(offsetX + 750, offsetY + 15),
+                    Location = new Point(offsetX + 765, offsetY + 15),
                     BackColor = Color.DodgerBlue,
                     ForeColor = Color.White
                 };
@@ -191,11 +192,13 @@ namespace FishMart.View
                 {
                     BackgroundImage = Properties.Resources.trash_icon,
                     BackgroundImageLayout = ImageLayout.Stretch,
+                    FlatStyle = FlatStyle.Flat,
                     Font = new Font("Poppins", 14, FontStyle.Regular),
-                    Size = new Size(40, 40),
-                    Location = new Point(offsetX + 850, offsetY + 15),
+                    Size = new Size(37, 37),
+                    Location = new Point(offsetX + 865, offsetY + 15),
                     ForeColor = Color.White
                 };
+                btnDelete.FlatAppearance.BorderSize = 0;
                 btnDelete.Click += (s, e) =>
                 {
                     var confirm = MessageBox.Show(

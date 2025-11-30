@@ -145,8 +145,8 @@
   <data name="BgTransaksi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BgTransaksi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="trash_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trash_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BgEditAkun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BgEditAkun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnCheckout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnCheckout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,20 +163,29 @@
   <data name="edit_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BgRiwayatTransaksiKasir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BgRiwayatTransaksiKasir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="EyesClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EyesClose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="plus_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnSimpanAKun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSimpanAKun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TambahAkun" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TambahAkun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trash_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trash_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bgDaftarTransaksi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bgDaftarTransaksi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BgProdukAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bgprodukterbaru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\BgProdukAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnBayar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnBayar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,8 +193,8 @@
   <data name="sing_in_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sing in buttonn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BgEditAkun" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BgEditAkun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BgTambahProduk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BgTambahProduk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BgDashboardAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BgDashboardAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,7 +211,7 @@
   <data name="EyesOpen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EyesOpen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnSimpanAKun" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnSimpanAKun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BgNewProduk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BgNewProduk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

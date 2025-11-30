@@ -13,6 +13,7 @@ namespace FishMart.Repositories
         void AddDetail(DetailTransaksi detail);
         List<Transaksi> GetAll();
         List<DetailTransaksi> GetDetails(int transaksiId);
+        List<Transaksi> GetRiwayatByKasir(int userId);
         int GetPemasukanHariIni();
         int GetJumlahTransaksiBulanIni();
         int GetTotalPemasukanBulanIni();

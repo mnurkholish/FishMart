@@ -67,5 +67,9 @@ namespace FishMart.Services
             return _repo.GetTotalPemasukanBulanIni();
         }
 
+        public List<Transaksi> GetRiwayatKasir(int userId)
+        {
+            return _repo.GetRiwayatByKasir(userId);
+        }
     }
 }

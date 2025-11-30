@@ -155,7 +155,7 @@
             dgvTransaksi.AllowUserToResizeColumns = false;
             dgvTransaksi.AllowUserToResizeRows = false;
             dgvTransaksi.AutoGenerateColumns = false;
-            dgvTransaksi.BackgroundColor = Color.WhiteSmoke;
+            dgvTransaksi.BackgroundColor = Color.FromArgb(250, 250, 250);
             dgvTransaksi.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;

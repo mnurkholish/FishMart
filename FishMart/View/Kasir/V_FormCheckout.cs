@@ -57,6 +57,7 @@ namespace FishMart.View.Kasir
             else
             {
                 MessageBox.Show("Transaksi berhasil disimpan", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close(); // Sementara tidak ada nota
             }
 
             //var nota = new V_Nota(_transaksi, _details, bayar);

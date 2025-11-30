@@ -2,9 +2,11 @@
 using FishMart.Models;
 using FishMart.Session;
 using FishMart.Utils;
+using FishMart.View.Admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -18,19 +20,35 @@ namespace FishMart.View
     public partial class V_RiwayatTransaksiKasir : Form
     {
         private readonly AuthController _authController;
-        private readonly ProdukController _produkController;
+        private readonly RiwayatController _riwayatController;
 
         public V_RiwayatTransaksiKasir()
         {
             InitializeComponent();
             _authController = new AuthController();
-            _produkController = new ProdukController();
+            _riwayatController = new RiwayatController();
         }
 
         private void V_RiwayatTransaksiKasir_Load(object sender, EventArgs e)
         {
             lblUsername.Text = UserSession.Username;
             lblEmail.Text = UserSession.Email;
+
+            dataGridView1.DataSource = _riwayatController.GetRiwayatKasir(UserSession.Id);
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["Detail"].Index && e.RowIndex >= 0)
+            {
+                int trxId = (int)dataGridView1.Rows[e.RowIndex].Cells["Id"].Value;
+
+                var transaksi = _riwayatController.GetRiwayat().First(t => t.Id == trxId);
+                var details = _riwayatController.GetDetails(trxId);
+
+                var formDetail = new V_DetailTransaksi(transaksi, details);
+                formDetail.ShowDialog();
+            }
         }
 
         private void btnTKasir_Click(object sender, EventArgs e)

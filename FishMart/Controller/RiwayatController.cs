@@ -56,5 +56,17 @@ namespace FishMart.Controller
         {
             return _userService.GetUserById(id).Username;
         }
+
+        public List<object> GetRiwayatKasir(int userId)
+        {
+            return _transaksiService.GetRiwayatKasir(userId)
+                           .Select(t => (object)new
+                           {
+                               t.Id,
+                               t.Tanggal,
+                               t.TotalHarga
+                           })
+                           .ToList();
+        }
     }
 }

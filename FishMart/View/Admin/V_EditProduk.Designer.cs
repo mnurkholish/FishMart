@@ -102,9 +102,7 @@
             // 
             // V_EditProduk
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.BgTambahProduk;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(495, 626);
             Controls.Add(btnUploadGambar);
@@ -114,9 +112,10 @@
             Controls.Add(tbHarga);
             Controls.Add(tbNamaProduk);
             DoubleBuffered = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_EditProduk";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "V_EditProduk";
+            Text = "Edit Produk";
             Load += V_EditProduk_Load;
             ((System.ComponentModel.ISupportInitialize)GambarProduk).EndInit();
             ResumeLayout(false);

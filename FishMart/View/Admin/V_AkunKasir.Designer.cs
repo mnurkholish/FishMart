@@ -157,7 +157,9 @@ namespace FishMart.View
             dataGridAkunKasir.AllowUserToAddRows = false;
             dataGridAkunKasir.AllowUserToResizeColumns = false;
             dataGridAkunKasir.AllowUserToResizeRows = false;
-            dataGridAkunKasir.BackgroundColor = Color.White;
+            dataGridAkunKasir.AutoGenerateColumns = false;
+            dataGridAkunKasir.BackgroundColor = Color.FromArgb(250, 250, 250);
+            dataGridAkunKasir.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);

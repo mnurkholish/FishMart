@@ -95,7 +95,7 @@ namespace FishMart.View
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.BgNewProduk;
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(495, 626);
             Controls.Add(btnTambahProduk);
@@ -104,9 +104,10 @@ namespace FishMart.View
             Controls.Add(gambarProduk);
             Controls.Add(tbNamaProduk);
             DoubleBuffered = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_TambahProduk";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "V_TambahProduk";
+            Text = "Tambah Produk";
             ((System.ComponentModel.ISupportInitialize)gambarProduk).EndInit();
             ResumeLayout(false);
             PerformLayout();

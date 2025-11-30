@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_RiwayatTransaksiKasir));
             btnTKasir = new Label();
             btnRTKasir = new Label();
@@ -35,6 +36,12 @@
             btnLogout = new Label();
             lblUsername = new Label();
             lblEmail = new Label();
+            dataGridView1 = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Tanggal = new DataGridViewTextBoxColumn();
+            TotalHarga = new DataGridViewTextBoxColumn();
+            Detail = new DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // btnTKasir
@@ -123,12 +130,77 @@
             lblEmail.Text = "Email@gmail.com";
             lblEmail.TextAlign = ContentAlignment.BottomLeft;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.BackgroundColor = Color.FromArgb(250, 250, 250);
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, Tanggal, TotalHarga, Detail });
+            dataGridView1.Location = new Point(285, 92);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(801, 600);
+            dataGridView1.TabIndex = 16;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "ID Transaksi";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Width = 125;
+            // 
+            // Tanggal
+            // 
+            Tanggal.DataPropertyName = "Tanggal";
+            Tanggal.HeaderText = "Tanggal Transaksi";
+            Tanggal.MinimumWidth = 6;
+            Tanggal.Name = "Tanggal";
+            Tanggal.ReadOnly = true;
+            Tanggal.Width = 300;
+            // 
+            // TotalHarga
+            // 
+            TotalHarga.DataPropertyName = "TotalHarga";
+            TotalHarga.HeaderText = "Total";
+            TotalHarga.MinimumWidth = 6;
+            TotalHarga.Name = "TotalHarga";
+            TotalHarga.ReadOnly = true;
+            TotalHarga.Width = 250;
+            // 
+            // Detail
+            // 
+            Detail.HeaderText = "Detail Transaksi";
+            Detail.MinimumWidth = 6;
+            Detail.Name = "Detail";
+            Detail.ReadOnly = true;
+            Detail.Text = "Lihat Detail";
+            Detail.UseColumnTextForButtonValue = true;
+            Detail.Width = 125;
+            // 
             // V_RiwayatTransaksiKasir
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.BgProdukKasir;
+            BackgroundImage = Properties.Resources.BgRiwayatTransaksiKasir;
             ClientSize = new Size(1280, 720);
+            Controls.Add(dataGridView1);
             Controls.Add(lblEmail);
             Controls.Add(lblUsername);
             Controls.Add(btnLogout);
@@ -140,8 +212,14 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FishMart";
             Load += V_RiwayatTransaksiKasir_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -151,5 +229,10 @@
         private Label btnLogout;
         private Label lblUsername;
         private Label lblEmail;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Tanggal;
+        private DataGridViewTextBoxColumn TotalHarga;
+        private DataGridViewButtonColumn Detail;
     }
 }

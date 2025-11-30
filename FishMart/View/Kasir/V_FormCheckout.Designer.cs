@@ -37,12 +37,12 @@
             // 
             // lblTotal
             // 
-            lblTotal.Anchor = AnchorStyles.Right;
-            lblTotal.AutoSize = true;
+            lblTotal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblTotal.BackColor = Color.Transparent;
             lblTotal.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTotal.Location = new Point(386, 81);
+            lblTotal.Location = new Point(178, 80);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(65, 36);
+            lblTotal.Size = new Size(269, 36);
             lblTotal.TabIndex = 0;
             lblTotal.Text = "Total";
             lblTotal.TextAlign = ContentAlignment.TopRight;
@@ -73,12 +73,12 @@
             // 
             // lblKembalian
             // 
-            lblKembalian.Anchor = AnchorStyles.Right;
-            lblKembalian.AutoSize = true;
+            lblKembalian.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblKembalian.BackColor = Color.Transparent;
             lblKembalian.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblKembalian.Location = new Point(425, 239);
+            lblKembalian.Location = new Point(178, 238);
             lblKembalian.Name = "lblKembalian";
-            lblKembalian.Size = new Size(26, 36);
+            lblKembalian.Size = new Size(269, 36);
             lblKembalian.TabIndex = 4;
             lblKembalian.Text = "-";
             lblKembalian.TextAlign = ContentAlignment.TopRight;
@@ -96,7 +96,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_FormCheckout";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "CheckOut";
+            Text = "Checkout";
             ResumeLayout(false);
             PerformLayout();
         }

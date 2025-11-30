@@ -107,7 +107,7 @@
             btnLogout.Cursor = Cursors.Hand;
             btnLogout.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogout.ForeColor = Color.Gray;
-            btnLogout.Location = new Point(58, 608);
+            btnLogout.Location = new Point(58, 612);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(60, 18);
             btnLogout.TabIndex = 13;
@@ -145,9 +145,9 @@
             // 
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.Transparent;
-            flowLayoutPanel1.Location = new Point(284, 162);
+            flowLayoutPanel1.Location = new Point(274, 153);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(960, 529);
+            flowLayoutPanel1.Size = new Size(994, 529);
             flowLayoutPanel1.TabIndex = 16;
             // 
             // BtnTambahProduk
