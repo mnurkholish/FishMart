@@ -20,7 +20,6 @@ namespace FishMart.View
     {
         private readonly AuthController _authController;
         private readonly ProdukController _produkController;
-        private readonly TransaksiController _transaksiController;
         private List<Panel> cartItems = new List<Panel>();
         private Dictionary<int, int> cartQuantities = new Dictionary<int, int>();
         private Dictionary<int, Panel> cartPanelsById = new Dictionary<int, Panel>();
@@ -30,7 +29,6 @@ namespace FishMart.View
             InitializeComponent();
             _authController = new AuthController();
             _produkController = new ProdukController();
-            _transaksiController = new TransaksiController();
         }
 
         private void V_Transaksi_Load(object sender, EventArgs e)
@@ -488,14 +486,12 @@ namespace FishMart.View
             var formCheckout = new V_FormCheckout(transaksi, details);
             formCheckout.ShowDialog();
 
-            // Clear keranjang UI & data
             PanelCart.Controls.Clear();
             cartItems.Clear();
             cartPanelsById.Clear();
             cartQuantities.Clear();
             RecalculateTotal();
 
-            // reload produk agar stok ter-update jika kamu implementasikan update stok
             var produks = _produkController.GetListProduk().OrderBy(p => p.Id).ToList();
             GenerateProductCards(produks);
         }

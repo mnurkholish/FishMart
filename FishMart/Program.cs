@@ -3,6 +3,7 @@ using FishMart.Controller;
 using FishMart.Repositories;
 using FishMart.Services;
 using FishMart.View;
+using FishMart.View.Kasir;
 
 namespace FishMart
 {
