@@ -51,5 +51,21 @@ namespace FishMart.Services
         public List<Transaksi> GetAll() => _repo.GetAll();
 
         public List<DetailTransaksi> GetDetail(int transaksiId) => _repo.GetDetails(transaksiId);
+
+        public int GetPemasukanHariIni()
+        {
+            return _repo.GetPemasukanHariIni();
+        }
+
+        public int GetJumlahTransaksiBulanIni()
+        {
+            return _repo.GetJumlahTransaksiBulanIni();
+        }
+
+        public int GetTotalPemasukanBulanIni()
+        {
+            return _repo.GetTotalPemasukanBulanIni();
+        }
+
     }
 }

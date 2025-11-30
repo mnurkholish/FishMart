@@ -12,5 +12,8 @@ namespace FishMart.Services
         int BuatTransaksi(Transaksi transaksi, List<DetailTransaksi> details);
         List<Transaksi> GetAll();
         List<DetailTransaksi> GetDetail(int transaksiId);
+        int GetPemasukanHariIni();
+        int GetJumlahTransaksiBulanIni();
+        int GetTotalPemasukanBulanIni();
     }
 }

@@ -97,5 +97,53 @@ namespace FishMart.Repositories
 
             return list;
         }
+
+        public int GetPemasukanHariIni()
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            string sql = @"
+                        SELECT COALESCE(SUM(total_harga), 0)
+                        FROM transaksi
+                        WHERE DATE(tanggal) = CURRENT_DATE
+                        ";
+
+            using var cmd = new NpgsqlCommand(sql, conn);
+            return Convert.ToInt32(cmd.ExecuteScalar());
+        }
+
+
+        public int GetJumlahTransaksiBulanIni()
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            string sql = @"
+                        SELECT COUNT(*)
+                        FROM transaksi
+                        WHERE EXTRACT(MONTH FROM tanggal) = EXTRACT(MONTH FROM CURRENT_DATE)
+                        AND EXTRACT(YEAR FROM tanggal) = EXTRACT(YEAR FROM CURRENT_DATE)
+                        ";
+
+            using var cmd = new NpgsqlCommand(sql, conn);
+            return Convert.ToInt32(cmd.ExecuteScalar());
+        }
+
+        public int GetTotalPemasukanBulanIni()
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            string sql = @"
+                    SELECT COALESCE(SUM(total_harga), 0)
+                    FROM transaksi
+                    WHERE EXTRACT(MONTH FROM tanggal) = EXTRACT(MONTH FROM CURRENT_DATE)
+                    AND EXTRACT(YEAR FROM tanggal) = EXTRACT(YEAR FROM CURRENT_DATE)
+                    ";
+
+            using var cmd = new NpgsqlCommand(sql, conn);
+            return Convert.ToInt32(cmd.ExecuteScalar());
+        }
     }
 }

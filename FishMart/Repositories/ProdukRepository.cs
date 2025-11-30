@@ -100,7 +100,7 @@ namespace FishMart.Repositories
             string query = @"
             SELECT id, nama_produk, harga, stok, gambar_produk, is_delete 
             FROM produk
-            WHERE stok > 0 AND stok < 10
+            WHERE stok > 0 AND stok < 10 AND is_delete = false
             ORDER BY stok ASC
             LIMIT 1";
 

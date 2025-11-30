@@ -19,12 +19,14 @@ namespace FishMart.View
     {
         private readonly AuthController _authController;
         private readonly ProdukController _produkController;
+        private readonly TransaksiController _transaksiController;
 
         public V_DashboardAdmin()
         {
             InitializeComponent();
             _authController = new AuthController();
             _produkController = new ProdukController();
+            _transaksiController = new TransaksiController();
         }
 
         private void V_DashboardAdmin_Load(object sender, EventArgs e)
@@ -37,6 +39,10 @@ namespace FishMart.View
             int display = 4;
             List<Produk> listProduks = _produkController.GetListProduk(display);
             GenerateProductCards(listProduks);
+
+            lblPemasukanHariIni.Text = $"Rp {_transaksiController.GetPemasukanHariIni():N0}";
+            lblJumlahTransaksi.Text = _transaksiController.GetJumlahTransaksiBulanIni().ToString();
+            lblTotalPenjualanBulanan.Text = $"Rp {_transaksiController.GetTotalPemasukanBulanIni():N0}";
         }
 
         private void GenerateProductCards(List<Produk> produkList)

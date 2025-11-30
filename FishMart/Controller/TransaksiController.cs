@@ -31,5 +31,9 @@ namespace FishMart.Controller
         {
             return _transaksiService.GetDetail(transaksiId);
         }
+
+        public int GetPemasukanHariIni() => _transaksiService.GetPemasukanHariIni();
+        public int GetJumlahTransaksiBulanIni() => _transaksiService.GetJumlahTransaksiBulanIni();
+        public int GetTotalPemasukanBulanIni() => _transaksiService.GetTotalPemasukanBulanIni();
     }
 }
