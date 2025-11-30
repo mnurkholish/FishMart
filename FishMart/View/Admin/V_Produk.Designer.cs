@@ -147,7 +147,7 @@
             flowLayoutPanel1.BackColor = Color.Transparent;
             flowLayoutPanel1.Location = new Point(274, 153);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(994, 529);
+            flowLayoutPanel1.Size = new Size(1006, 529);
             flowLayoutPanel1.TabIndex = 16;
             // 
             // BtnTambahProduk

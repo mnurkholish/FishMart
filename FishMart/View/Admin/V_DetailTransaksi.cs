@@ -45,7 +45,7 @@ namespace FishMart.View.Admin
                 {
                     Width = flowLayoutPanel1.Width - 25,
                     Height = 60,
-                    BackColor = Color.White,
+                    BackColor = Color.Transparent,
                     Margin = new Padding(5),
                     BorderStyle = BorderStyle.FixedSingle
                 };

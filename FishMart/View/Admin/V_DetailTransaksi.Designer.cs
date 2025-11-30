@@ -91,33 +91,30 @@
             panelContainer.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelContainer.Controls.Add(flowLayoutPanel1);
             panelContainer.Location = new Point(12, 141);
-            panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(6, 6);
-            panelContainer.TabIndex = 6;
-            panelContainer.AutoSize = true;
-            panelContainer.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelContainer.MinimumSize = new Size(200, 50);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Size = new Size(306, 56);
+            panelContainer.TabIndex = 6;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoSize = true;
             flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel1.Location = new Point(3, 3);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(0, 0);
-            flowLayoutPanel1.TabIndex = 0;
-            flowLayoutPanel1.AutoSize = true;
-            flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.WrapContents = false;
+            flowLayoutPanel1.Location = new Point(3, 3);
             flowLayoutPanel1.MinimumSize = new Size(300, 50);
-            flowLayoutPanel1.Layout += FlowLayoutPanel1_Layout;
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(300, 50);
+            flowLayoutPanel1.TabIndex = 0;
+            flowLayoutPanel1.WrapContents = false;
             flowLayoutPanel1.ControlAdded += FlowLayoutPanel1_ControlAdded;
+            flowLayoutPanel1.Layout += FlowLayoutPanel1_Layout;
             // 
             // V_DetailTransaksi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(250, 250, 250);
             ClientSize = new Size(322, 178);
             Controls.Add(panelContainer);
             Controls.Add(lblUser);
