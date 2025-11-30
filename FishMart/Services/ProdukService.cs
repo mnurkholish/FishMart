@@ -11,6 +11,7 @@ namespace FishMart.Services
     public class ProdukService : IProdukService
     {
         private readonly ProdukRepository _repo;
+
         public ProdukService()
         {
             _repo = new ProdukRepository();
@@ -26,6 +27,10 @@ namespace FishMart.Services
         public Produk? GetLowStock()
         {
             return _repo.GetLowStock();
+        }
+        public Produk? GetProdukById(int id)
+        {
+            return _repo.GetProdukById(id);
         }
         public void InsertProduk(Produk produk)
         {

@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace FishMart.View
 {
-    public partial class PopupTambahAkunKasir : Form
+    public partial class V_TambahAkunKasir : Form
     {
         private readonly UserController _userController;
-        public PopupTambahAkunKasir()
+        public V_TambahAkunKasir()
         {
             InitializeComponent();
             _userController = new UserController();

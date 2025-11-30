@@ -17,6 +17,11 @@ namespace FishMart.Services
             _repo = new UserRepository();
         }
 
+        public User? GetUserById(int id)
+        {
+            return _repo.GetUserById(id);
+        }
+
         public bool Create(string email, string password, string username, string noTelp)
         {
             
@@ -68,6 +73,43 @@ namespace FishMart.Services
             return true;
         }
 
+        public bool UpdateUser(int id, string username, string noTelp, string password)
+        {
+            User user = _repo.GetUserById(id);
+            if (user == null) return false;
+
+            // --- VALIDASI USERNAME ---
+            if (username.Length < 3)
+            {
+                MessageBox.Show("Username harus lebih dari 3 karakter!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            user.Username = username;
+
+            // --- VALIDASI NO TELEP ---
+            if (noTelp.Length < 10 || noTelp.Length > 15 || !noTelp.All(char.IsDigit))
+            {
+                MessageBox.Show("Nomor telepon tidak valid!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            user.NoTelp = noTelp;
+
+            // --- VALIDASI PASSWORD ---
+            if (!string.IsNullOrWhiteSpace(password))
+            {
+                if (password.Length < 6)
+                {
+                    MessageBox.Show("Password harus lebih dari 6 karakter!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(password);
+            }
+
+            _repo.Update(user);
+
+            return true;
+        }
+
         public User? Login(string email, string password)
         {
             var user = _repo.GetUserByEmail(email);
@@ -84,6 +126,11 @@ namespace FishMart.Services
             UserSession.IsAdmin = user.IsAdmin;
 
             return user;
+        }
+
+        public List<User> GetAllKasir()
+        {
+            return _repo.GetAkunKasir();
         }
 
         public void FillWithAkunKasir(DataGridView dgv)

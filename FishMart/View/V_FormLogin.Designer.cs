@@ -29,25 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_FormLogin));
-            pictureBox1 = new PictureBox();
             npgsqlCommandBuilder1 = new Npgsql.NpgsqlCommandBuilder();
             tbEmailLogin = new TextBox();
             tbPasswordLogin = new TextBox();
             btnLogin = new Button();
             btnShowPassword = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.login_bg;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1280, 719);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // npgsqlCommandBuilder1
             // 
@@ -58,9 +45,9 @@
             // 
             tbEmailLogin.BorderStyle = BorderStyle.None;
             tbEmailLogin.Font = new Font("Poppins", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbEmailLogin.Location = new Point(784, 316);
+            tbEmailLogin.Location = new Point(789, 316);
             tbEmailLogin.Name = "tbEmailLogin";
-            tbEmailLogin.Size = new Size(378, 27);
+            tbEmailLogin.Size = new Size(364, 27);
             tbEmailLogin.TabIndex = 2;
             // 
             // tbPasswordLogin
@@ -68,9 +55,9 @@
             tbPasswordLogin.BackColor = Color.White;
             tbPasswordLogin.BorderStyle = BorderStyle.None;
             tbPasswordLogin.Font = new Font("Poppins", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbPasswordLogin.Location = new Point(784, 424);
+            tbPasswordLogin.Location = new Point(789, 425);
             tbPasswordLogin.Name = "tbPasswordLogin";
-            tbPasswordLogin.Size = new Size(378, 27);
+            tbPasswordLogin.Size = new Size(337, 27);
             tbPasswordLogin.TabIndex = 5;
             // 
             // btnLogin
@@ -85,6 +72,7 @@
             // 
             // btnShowPassword
             // 
+            btnShowPassword.BackColor = Color.Transparent;
             btnShowPassword.BackgroundImage = Properties.Resources.EyesClose;
             btnShowPassword.BackgroundImageLayout = ImageLayout.Stretch;
             btnShowPassword.FlatAppearance.BorderSize = 0;
@@ -93,32 +81,29 @@
             btnShowPassword.Name = "btnShowPassword";
             btnShowPassword.Size = new Size(30, 30);
             btnShowPassword.TabIndex = 7;
-            btnShowPassword.UseVisualStyleBackColor = true;
+            btnShowPassword.UseVisualStyleBackColor = false;
             btnShowPassword.Click += btnShowPassword_Click;
             // 
             // V_FormLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.login_bg;
             ClientSize = new Size(1280, 719);
             Controls.Add(btnShowPassword);
             Controls.Add(tbEmailLogin);
             Controls.Add(btnLogin);
             Controls.Add(tbPasswordLogin);
-            Controls.Add(pictureBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FishMart";
             Load += FormLogin_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Npgsql.NpgsqlCommandBuilder npgsqlCommandBuilder1;
         private TextBox tbEmailLogin;
         private TextBox tbPasswordLogin;

@@ -11,10 +11,12 @@ namespace FishMart.Services
     public class TransaksiService : ITransaksiService
     {
         private readonly ITransaksiRepository _repo;
+        private readonly IProdukRepository _produkRepository;
 
         public TransaksiService()
         {
             _repo = new TransaksiRepository();
+            _produkRepository = new ProdukRepository();
         }
 
         public int BuatTransaksi(Transaksi transaksi, List<DetailTransaksi> details)
@@ -29,6 +31,16 @@ namespace FishMart.Services
                 total += d.Subtotal;
 
                 _repo.AddDetail(d);
+
+                var produk = _produkRepository.GetProdukById(d.ProdukId);
+
+                if (produk != null)
+                {
+                    int stokBaru = produk.Stok - d.Qty;
+                    if (stokBaru < 0) stokBaru = 0;
+
+                    _produkRepository.UpdateStock(d.ProdukId, stokBaru);
+                }
             }
 
             // Update total harga

@@ -69,6 +69,29 @@ namespace FishMart.Repositories
             return daftarProduk;
         }
 
+        public Produk GetProdukById(int id)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            string sql = "SELECT id, nama_produk, harga, stok FROM produk WHERE id = @id";
+            using var cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            using var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return new Produk
+                {
+                    Id = reader.GetInt32(0),
+                    Nama = reader.GetString(1),
+                    Harga = reader.GetInt32(2),
+                    Stok = reader.GetInt32(3)
+                };
+            }
+            return null;
+        }
+
         public Produk? GetLowStock()
         {
             using var conn = Database.GetConnection();
@@ -154,6 +177,17 @@ namespace FishMart.Repositories
             cmd.ExecuteNonQuery();
         }
 
+        public void UpdateStock(int produkId, int qtyBaru)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
 
+            string sql = "UPDATE produk SET stok = @stok WHERE id = @id";
+            using var cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@stok", qtyBaru);
+            cmd.Parameters.AddWithValue("@id", produkId);
+
+            cmd.ExecuteNonQuery();
+        }
     }
 }

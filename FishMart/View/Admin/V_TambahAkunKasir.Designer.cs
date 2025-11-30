@@ -1,6 +1,6 @@
 ﻿namespace FishMart.View
 {
-    partial class PopupTambahAkunKasir
+    partial class V_TambahAkunKasir
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_TambahAkunKasir));
             tbEmail = new TextBox();
             tbPassword = new TextBox();
             tbUsername = new TextBox();
@@ -81,7 +82,7 @@
             btnBuatAkun.UseVisualStyleBackColor = false;
             btnBuatAkun.Click += btnBuatAkun_Click;
             // 
-            // PopupTambahAkunKasir
+            // V_TambahAkunKasir
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -93,7 +94,8 @@
             Controls.Add(tbPassword);
             Controls.Add(tbEmail);
             DoubleBuffered = true;
-            Name = "PopupTambahAkunKasir";
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "V_TambahAkunKasir";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tambah Akun Kasir";
             ResumeLayout(false);

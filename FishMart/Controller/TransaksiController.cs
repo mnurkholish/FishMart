@@ -10,26 +10,26 @@ namespace FishMart.Controller
 {
     public class TransaksiController
     {
-        private readonly ITransaksiService _service;
+        private readonly ITransaksiService _transaksiService;
 
         public TransaksiController()
         {
-            _service = new TransaksiService();
+            _transaksiService = new TransaksiService();
         }
 
         public int SimpanTransaksi(Transaksi trx, List<DetailTransaksi> items)
         {
-            return _service.BuatTransaksi(trx, items);
+            return _transaksiService.BuatTransaksi(trx, items);
         }
 
         public List<Transaksi> TampilkanTransaksi()
         {
-            return _service.GetAll();
+            return _transaksiService.GetAll();
         }
 
         public List<DetailTransaksi> TampilkanDetail(int transaksiId)
         {
-            return _service.GetDetail(transaksiId);
+            return _transaksiService.GetDetail(transaksiId);
         }
     }
 }

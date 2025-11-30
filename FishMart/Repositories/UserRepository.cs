@@ -1,4 +1,4 @@
-
+﻿
 using FishMart.Models;
 using FishMart.Utils;
 using Npgsql;
@@ -34,6 +34,32 @@ namespace FishMart.Repositories
             };
         }
 
+        public User? GetUserById(int id)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            using var cmd = new NpgsqlCommand(
+                @"SELECT id, email, password_hash, username, no_telp, is_admin, is_active
+                  FROM users 
+                  WHERE id = @i", conn);
+            cmd.Parameters.AddWithValue("@i", id);
+
+            using var reader = cmd.ExecuteReader();
+            if (!reader.Read()) return null;
+
+            return new User
+            {
+                Id = reader.GetInt32(0),
+                Email = reader.GetString(1),
+                PasswordHash = reader.GetString(2),
+                Username = reader.GetString(3),
+                NoTelp = reader.GetString(4),
+                IsAdmin = reader.GetBoolean(5),
+                IsActive = reader.GetBoolean(6)
+            };
+        }
+
         public void Create(User user)
         {
             using var conn = Database.GetConnection();
@@ -47,6 +73,26 @@ namespace FishMart.Repositories
             cmd.Parameters.AddWithValue("@p", user.PasswordHash);
             cmd.Parameters.AddWithValue("@u", user.Username);
             cmd.Parameters.AddWithValue("@n", user.NoTelp);
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void Update(User user)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            using var cmd = new NpgsqlCommand(
+                @"UPDATE users SET 
+                username = @u,
+                no_telp = @nt,
+                password_hash = @p
+                WHERE id = @id;", conn);
+
+            cmd.Parameters.AddWithValue("@u", user.Username);
+            cmd.Parameters.AddWithValue("@nt", user.NoTelp);
+            cmd.Parameters.AddWithValue("@p", user.PasswordHash);
+            cmd.Parameters.AddWithValue("@id", user.Id);
 
             cmd.ExecuteNonQuery();
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Xsl;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace FishMart.Controller
 {
@@ -30,6 +31,19 @@ namespace FishMart.Controller
             }
 
             var user = _userService.Create(email, password, username, noTelp);
+            return user;
+        }
+
+        public bool UpdateUser(int id, string username, string noTelp, string password)
+        {
+            if (string.IsNullOrWhiteSpace(username) ||
+                string.IsNullOrWhiteSpace(noTelp))
+            {
+                MessageBox.Show("Username dan No Telepon tidak boleh kosong!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            var user = _userService.UpdateUser(id, username, noTelp, password);
             return user;
         }
         public void FillDataWithAkunKasir(DataGridView dataGrid)

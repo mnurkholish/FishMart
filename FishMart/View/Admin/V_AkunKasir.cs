@@ -2,6 +2,7 @@
 using FishMart.Models;
 using FishMart.Session;
 using FishMart.Utils;
+using FishMart.View.Admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,6 +44,16 @@ namespace FishMart.View
                 _userController.ToggleUserStatus(userId);
                 V_AkunKasir_Load(this, EventArgs.Empty);
             }
+
+            else if (e.ColumnIndex == dataGridAkunKasir.Columns["Edit"].Index && e.RowIndex >= 0)
+            {
+                int userId = (int)dataGridAkunKasir.Rows[e.RowIndex].Cells["Id"].Value;
+                string username = (string)dataGridAkunKasir.Rows[e.RowIndex].Cells["Username"].Value;
+                string noTelp = (string)dataGridAkunKasir.Rows[e.RowIndex].Cells["NoTelp"].Value;
+                var editAkunKasir = new V_EditAKunKasir(userId, username, noTelp);
+                editAkunKasir.ShowDialog();
+                V_AkunKasir_Load(sender, EventArgs.Empty);
+            } 
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -80,7 +91,7 @@ namespace FishMart.View
 
         private void btnTambahAkunKasir_Click(object sender, EventArgs e)
         {
-            PopupTambahAkunKasir tambahAkunKasir = new PopupTambahAkunKasir();
+            V_TambahAkunKasir tambahAkunKasir = new V_TambahAkunKasir();
             tambahAkunKasir.ShowDialog();
             V_AkunKasir_Load(this, EventArgs.Empty);
         }
