@@ -1,10 +1,7 @@
-
-using BCrypt.Net;
 using FishMart.Models;
 using FishMart.Repositories;
 using FishMart.Session;
 using System.Data;
-using System.Text.RegularExpressions;
 
 namespace FishMart.Services
 {

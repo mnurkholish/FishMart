@@ -1,5 +1,4 @@
 using FishMart.Models;
-using System.Data;
 
 namespace FishMart.Services
 {

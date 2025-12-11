@@ -1,16 +1,6 @@
-﻿using DotNetEnv;
-using FishMart.Models;
-using FishMart.Services;
+﻿using FishMart.Services;
 using FishMart.Session;
-using FishMart.Utils;
 using FishMart.View;
-using Microsoft.VisualBasic.ApplicationServices;
-using Npgsql;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FishMart.Controller
 {

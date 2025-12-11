@@ -1,14 +1,4 @@
 ﻿using FishMart.Controller;
-using FishMart.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace FishMart
 {
@@ -58,7 +48,6 @@ namespace FishMart
             {
                 MessageBox.Show("Username atau Password salah. Silahkan Coba Lagi!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void btnShowPassword_Click(object sender, EventArgs e)

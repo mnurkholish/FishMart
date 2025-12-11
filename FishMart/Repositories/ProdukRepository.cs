@@ -1,13 +1,6 @@
 ﻿using FishMart.Models;
 using FishMart.Utils;
-using FishMart.Controller;
-using System.IO;
 using Npgsql;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FishMart.Repositories
 {

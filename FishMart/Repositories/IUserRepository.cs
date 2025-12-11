@@ -1,7 +1,4 @@
-
 using FishMart.Models;
-using System.Collections.Generic;
-using System.Data;
 
 namespace FishMart.Repositories
 {

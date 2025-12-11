@@ -1,17 +1,8 @@
 ﻿using FishMart.Controller;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace FishMart.View.Admin
 {
-    public partial class V_EditAKunKasir : Form
+    public partial class V_EditAkunKasir : Form
     {
         private readonly UserController _userController;
 
@@ -19,7 +10,7 @@ namespace FishMart.View.Admin
         private string _username;
         private string _noTelp;
 
-        public V_EditAKunKasir(int userId, string username, string noTelp)
+        public V_EditAkunKasir(int userId, string username, string noTelp)
         {
             InitializeComponent();
             _userController = new UserController();

@@ -1,8 +1,6 @@
-﻿
-using FishMart.Models;
+﻿using FishMart.Models;
 using FishMart.Utils;
 using Npgsql;
-using System.Data;
 
 namespace FishMart.Repositories
 {

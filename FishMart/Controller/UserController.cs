@@ -1,13 +1,4 @@
 ﻿using FishMart.Services;
-using FishMart.Session;
-using Sprache;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Xsl;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace FishMart.Controller
 {

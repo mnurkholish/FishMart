@@ -1,17 +1,7 @@
 ﻿using FishMart.Controller;
 using FishMart.Models;
 using FishMart.Session;
-using FishMart.Utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace FishMart.View
 {
@@ -104,7 +94,7 @@ namespace FishMart.View
                     Size = new Size(260, 30)
                 };
 
-                // === HARGA PRODUK (DI SEBELAH KANAN NAMA) ===
+                // === HARGA PRODUK ===
                 Label lblHarga = new Label
                 {
                     Text = "Rp " + produk.Harga.ToString("N0"),

@@ -1,6 +1,6 @@
 ﻿namespace FishMart.View.Admin
 {
-    partial class V_EditAKunKasir
+    partial class V_EditAkunKasir
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_EditAKunKasir));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_EditAkunKasir));
             tbUsername = new TextBox();
             tbNoTelp = new TextBox();
             tbPassword = new TextBox();
